@@ -1,0 +1,24 @@
+@import './variables';
+
+.Showroom {
+    background: url(../imgs/Background-Website.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    font-size: 1.8em;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 50%;
+}
+
+.showroom__first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.showroom__text-container {
+    max-width: 700px;
+}

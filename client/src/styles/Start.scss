@@ -1,0 +1,293 @@
+@import './variables';
+
+.Start {
+    height: 100vh;
+    width: 100%;
+    background: url(../imgs/Background-Website.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.start__grid {
+    display: grid;
+    grid-auto-rows: 50%;
+    height: 100%;
+}
+
+.start__second {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+}
+
+.logo {
+    background: url(../imgs/tabteam-logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.start__first {
+    display: flex;
+    align-items: center;
+}
+
+.start__monitor {
+    background: url(../imgs/1593508965263_MO-1532-U28R55.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.start__socials {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    padding: 0 1em;
+}
+  
+.start__socials-wrapper {
+    margin: 0;
+    padding: 0 1em;
+    display: grid;
+    gap: 1em;
+    position: relative;
+    &::after {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      width: 0.2em;
+      content: '';
+      background: $highlighted-color;
+      border-radius: 100px;
+    }
+}
+  
+.start__socials-icon {
+    list-style: none;
+    aspect-ratio: 1/1;
+    margin: 1.2em 0;
+}
+  
+.facebook {
+    background: url(../imgs/facebook-lines.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $animation-speed;
+}
+  
+.facebook.active {
+    background: url(../imgs/facebook-filled.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $animation-speed;
+}
+
+.instagram {
+    background: url(../imgs/instagram-lines.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $animation-speed;
+}
+
+.instagram.active {
+    background: url(../imgs/instagram-filled.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $animation-speed;
+}
+
+.linkedin {
+    background: url(../imgs/linkedin-in-lines.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $animation-speed;
+}
+
+.linkedin.active {
+    background: url(../imgs/linkedin-in-filled.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $animation-speed;
+}
+
+.discord {
+    background: url(../imgs/discord-lines.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $animation-speed;
+}
+
+.discord.active {
+    background: url(../imgs/discord-filled.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $animation-speed;
+}
+
+@media only screen and (max-width: 375px) {
+    .Start {
+        font-size: 0.65em;
+    }
+
+    .logo-container {
+        height: 25px;
+    }
+
+    .start__second {
+        align-items: baseline;
+    }
+
+    
+
+    .start__socials {
+        height: 50%;
+    }
+
+    .start__socials-icon {
+        height: 15px;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .Start {
+        font-size: 0.8em;
+    }
+
+    .logo-container {
+        height: 30px;
+    }
+
+    
+
+    .start__socials {
+        height: 50%;
+    }
+
+    .start__socials-icon {
+        height: 20px;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+    .start__first {
+        align-items: flex-end;
+    }
+
+    .start__monitor {
+        height: 85%;
+    }
+
+    .Start {
+        font-size: 0.9em;
+    }
+
+    .logo-container {
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .Start {
+        font-size: 1.3em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .start__second {
+        display: flex;
+        justify-content: center;
+    }
+
+    
+
+    .logo-container {
+        height: 45px;
+    }
+
+    .start__socials-icon {
+        height: 30px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .Start {
+        font-size: 1.5em;
+    }
+    
+    .start__socials {
+        height: 100%;
+    }
+
+    .start__socials-icon {
+        height: 25px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .start__grid {
+        display: flex;
+        position: relative;
+        align-items: center;
+    }
+
+    .start__second {
+        position: absolute;
+        left: 0;
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 90%;
+    }
+
+    .start__first {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+    }
+
+    .start__textContainer {
+        font-size: 1.2em;
+    }
+
+    .start__socials-icon {
+        height: 40px;
+    }
+
+    .logo-container {
+        height: 60px;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    
+}

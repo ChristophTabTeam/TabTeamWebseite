@@ -1,0 +1,92 @@
+@import './variables';
+
+.App {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.go-bottom-button {
+    position: fixed;
+    z-index: 2;
+    right: 50px;
+    bottom: 50px;
+    color: $white-font-color;
+}
+
+.socials__container {
+    width: 100%;
+    height: 100px;
+    background: $background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: $white-font-color;
+}
+
+.socials__wrapper {
+    padding: 0;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+}
+
+.socials__icon {
+    list-style: none;
+    height: 40px;
+    aspect-ratio: 1/1;
+}
+
+.facebook.active {
+    background: url(../imgs/facebook-filled.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $animation-speed;
+}
+
+.instagram.active {
+    background: url(../imgs/instagram-filled.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $animation-speed;
+}
+
+.linkedin.active {
+    background: url(../imgs/linkedin-in-filled.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $animation-speed;
+}
+
+.copyright__container {
+    height: 7vh;
+    width: 100%;
+    background: $background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright {
+    margin: 0;
+    color: $accent-color;
+}
+
+@media only screen and (max-width: 768px) {
+    .go-bottom-button {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .go-bottom-button {
+        display: block;
+    }
+}

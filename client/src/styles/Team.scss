@@ -1,0 +1,637 @@
+@import './variables';
+
+.Team {
+    overflow-x: hidden;
+    height: 100vh;
+    position: relative;
+    background: $background-color;
+}
+
+.team__show-overview {
+    position: absolute;
+    right: 0;
+    width: 10em;
+    height: 100%;
+    display: flex;
+    gap: 0.5em;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+    padding: 0 1em 0 0;
+    text-align: center;
+    font-size: 0.7em;
+    color: $white-font-color;
+    transition-duration: $animation-speed;
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0));
+    &:hover {
+        background: linear-gradient(to right, rgba(0,0,0,0), rgba(247, 247, 247, .2));
+    }
+}
+
+.TeamGeneral {
+    background: $background-color;
+    height: 100%;
+    width: 100vw;
+    display: grid;
+    grid-auto-rows: 50%;
+    position: absolute;
+    left: 0;
+    font-size: 1.7em;
+    transition-duration: 0.5s;
+}
+
+.TeamGeneral.moved {
+    transform: translateX(-100vw);
+}
+
+.team__first {
+    font-size: 1em;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team__text-container {
+    max-width: 730px;
+    text-align: left;
+}
+
+.team__second {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+}
+
+.team__second-background {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.team__second-top-background {
+    height: 50%;
+    width: 100%;
+    background: url(../imgs/Background-Website.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.team__employee-container {
+    width: 1200px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 33.33%;
+    z-index: 1;
+    position: absolute;
+    top: -145px;
+}
+
+.team__employee {
+    padding: 2.7em;
+    text-align: center;
+}
+
+.team__employee-profilepic {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: $white-font-color;
+
+}
+
+.team__employee-caption {
+    font-size: 0.7em;
+    margin: 0;
+}
+
+.team__employee-name {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.team__employee-job-title {
+    font-size: 0.9em;
+    color: $accent-color;
+    margin: 0;
+}
+
+.TeamOverview {
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    left: +100vw;
+    transition-duration: 0.5s;
+    background: url(../imgs/Background-Website.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 1.7em;
+    text-align: center;
+}
+
+.TeamOverview.moved {
+    transform: translateX(-100vw);
+}
+
+.team__hide-overview {
+    position: absolute;
+    left: 0;
+    width: 10em;
+    height: 100%;
+    display: flex;
+    gap: 0.5em;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2;
+    padding: 0 0 0 1em;
+    text-align: center;
+    font-size: 0.7em;
+    color: $white-font-color;
+    transition-duration: $animation-speed;
+    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0));
+    &:hover {
+        background: linear-gradient(to left, rgba(0,0,0,0), rgba(247, 247, 247, .2));
+    }
+}
+
+.team__overview__first {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $background-color;
+}
+
+.team__overview__second {
+    height: 70%;
+    width: 100%;
+    display: grid;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: left;
+    
+    padding: 1em;
+}
+
+.team__overview__second-team-group {
+    width: 100%;
+    color: $white-font-color;
+}
+
+.teamleiter {
+    background: $red-color;
+}
+
+.team__overview__second-team-title {
+    margin: 0;
+    height: min-content;
+}
+
+.team__overview__second-team-profiles {
+    display: grid;
+    grid-auto-flow: column;
+    height: 100%;
+    max-height: 200px;
+}
+
+.team__overview__second-team-profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.team__overview__second-team-profile {
+    height: 80%;
+    aspect-ratio: 1/1;
+    background: $white-font-color;
+    border-radius: 50%;
+}
+
+.team__choose-team {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 2em;
+    height: max-content;
+    text-align: center;
+    position: absolute;
+    bottom: 14%;
+    font-size: 1.2em;
+    z-index: 1;
+}
+
+.team__choose-team-name {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 300px) {
+    .TeamGeneral {
+        font-size: 0.65em;
+        display: flex;
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+
+    .team__first {
+        align-items: baseline;
+    }
+
+    .team__text-container {
+        padding: 0 2em;
+    }
+
+    .team__second-background {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: brightness(110%) saturate(140%);
+    }
+
+    .team__employee-container {
+        max-width: 90%;
+        display: grid;
+        grid-auto-columns: 100%;
+        top: 0;
+        font-size: 1.3em;
+        height: 100%;
+        position: relative;
+        transition-duration: $animation-speed;
+    }
+
+    .team__employee-container.first {
+        transform: translateX(0);
+        transition-duration: $animation-speed;
+    }
+
+    .team__employee-container.second {
+        transform: translateX(-100%);
+        transition-duration: $animation-speed;
+    }
+
+    .team__employee-container.third {
+        transform: translateX(-200%);
+        transition-duration: $animation-speed;
+    }
+
+    .team__employee-mobile-indicator-container {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        height: 3px;
+        top: 50%;
+        margin: 0 auto;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 2;
+    }
+
+    .team__mobile__indicator {
+        background: $white-font-color;
+        width: 15%;
+        height: 100%;
+        transition-duration: $animation-speed;
+    }
+
+    .team__mobile__indicator.active {
+        background: $accent-color;
+        width: 20%;
+        transition-duration: $animation-speed;
+    }
+
+    .team__employee-profilepic {
+        max-width: 90%;
+        max-height: 90%;
+        margin: 0 auto;
+        aspect-ratio: 1/1;
+    }
+
+    .team__employee-profilepic-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 0em 0;
+        aspect-ratio: 1/1;
+        margin: 0 auto;
+    }
+
+    .team__employee {
+        padding: 0 2em;
+        text-align: center;
+        display: grid;
+        grid-auto-rows: 50%;
+    }
+
+    .team__employee-details-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .5em;
+    }
+
+    .team__employee-caption {
+        max-width: 80%;
+    }
+
+    .team__employee-name {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 300px) {
+    .TeamGeneral {
+        font-size: 0.65em;
+        display: flex;
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+    
+    .team__show-overview {
+        display: none;
+    }
+
+    .TeamOverview {
+        display: none;
+    }
+
+    .team__first {
+        align-items: baseline;
+    }
+
+    .team__text-container {
+        padding: 0 2em;
+    }
+
+    .team__second-background {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .team__employee-container {
+        max-width: 90%;
+        display: grid;
+        grid-auto-columns: 100%;
+        top: 0;
+        font-size: 1.3em;
+        height: 100%;
+        position: relative;
+        transition-duration: $animation-speed;
+    }
+
+    .team__employee-container.christoph {
+        transform: translateX(0);
+        transition-duration: $animation-speed;
+    }
+
+    .team__employee-container.alex {
+        transform: translateX(-100%);
+        transition-duration: $animation-speed;
+    }
+
+    .team__employee-container.sascha {
+        transform: translateX(-200%);
+        transition-duration: $animation-speed;
+    }
+
+    .team__employee-mobile-indicator-container {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        height: 3px;
+        top: 50%;
+        margin: 0 auto;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 2;
+    }
+
+    .team__employee-mobile-indicator-container.inactive {
+        display: none;
+    }
+
+    .team__mobile__indicator {
+        background: $white-font-color;
+        width: 15%;
+        height: 100%;
+        transition-duration: $animation-speed;
+    }
+
+    .team__mobile__indicator.active {
+        background: $accent-color;
+        width: 20%;
+        transition-duration: $animation-speed;
+    }
+
+    .team__employee-profilepic {
+        max-width: 90%;
+        max-height: 90%;
+        margin: 0 auto;
+        aspect-ratio: 1/1;
+    }
+
+    .team__employee-profilepic-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 0em 0;
+        aspect-ratio: 1/1;
+        margin: 0 auto;
+    }
+
+    .team__employee {
+        padding: 0 2em;
+        text-align: center;
+        display: grid;
+        grid-auto-rows: 50%;
+    }
+
+    .team__employee-details-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .5em;
+    }
+
+    .team__employee-caption {
+        max-width: 80%;
+    }
+
+    .team__employee-name {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .TeamGeneral {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (min-width: 390px) {
+    .TeamGeneral {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 600px) {
+    .TeamGeneral {
+        font-size: 1.3em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    
+
+    .team__text-container {
+        max-width: 65%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .TeamGeneral {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .Team {
+        overflow-x: hidden;
+        height: 100vh;
+        width: 200vw;
+        position: relative;
+        background: $background-color;
+    }
+    
+    .team__show-overview {
+        position: absolute;
+        right: 0;
+        width: 10em;
+        height: 100%;
+        display: flex;
+        gap: 0.5em;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 2;
+        padding: 0 1em 0 0;
+        text-align: center;
+        font-size: 0.7em;
+        color: $white-font-color;
+        transition-duration: $animation-speed;
+        background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0));
+        &:hover {
+            background: linear-gradient(to right, rgba(0,0,0,0), rgba(247, 247, 247, .2));
+        }
+    }
+    
+    .TeamGeneral {
+        background: $background-color;
+        height: 100%;
+        width: 100vw;
+        display: grid;
+        grid-auto-rows: 50%;
+        position: absolute;
+        left: 0;
+        transition-duration: 0.5s;
+    }
+    
+    .TeamGeneral.moved {
+        transform: translateX(-100vw);
+    }
+    
+    .team__first {
+        font-size: 1em;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .team__text-container {
+        max-width: 730px;
+        text-align: left;
+    }
+    
+    .team__second {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        height: 100%;
+    }
+    
+    .team__second-background {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        align-items: baseline;
+    }
+    
+    .team__second-top-background {
+        height: 50%;
+        width: 100%;
+        background: url(../imgs/Background-Website.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .team__employee-container {
+        width: 1200px;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        gap: 2em;
+        z-index: 1;
+        position: absolute;
+        top: -20%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    
+    .team__employee {
+        padding: 0.5em;
+        text-align: center;
+    }
+    
+    .team__employee-profilepic {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background: $white-font-color;
+    
+    }
+    
+    .team__employee-caption {
+        font-size: 0.7em;
+        margin: 0;
+    }
+    
+    .team__employee-name {
+        font-size: 0.9em;
+        margin: 0;
+    }
+    
+    .team__employee-job-title {
+        font-size: 0.9em;
+        color: $accent-color;
+        margin: 0;
+    }
+    
+    .teamleiter {
+        background: $red-color;
+    }
+}

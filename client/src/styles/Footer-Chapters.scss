@@ -1,0 +1,166 @@
+@import './variables';
+
+.footer__content__headline {
+    font-size: 2.2em;
+}
+
+.footer__content__chapter-headline {
+    font-size: 1.7em;
+    padding: 0.5em 0 0 0;
+}
+
+.footer__content__text {
+    font-size: 1em;
+}
+
+.footer__content__ul {
+    padding: 0 0 0 2em;
+    color: $white-font-color;
+}
+
+.footer__content__li {
+    padding: 0.5em 0;
+}
+
+.footer__content__sub-chapter-headline {
+    color: $white-font-color;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.footer__content__sub-sub-chapter-headline {
+    font-size: 1.3em;
+    color: $white-font-color;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.footer__content__text-mini {
+    font-size: 0.9em;
+}
+
+.footer__content__filter {
+    margin: 0;
+    padding: 1em 1em 0.2em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.footer__content__filter-container {
+    display: flex;
+    gap: 1em;
+    padding: 0 1em;
+}
+
+.footer__content__filter-items-container {
+    display: flex;
+    gap: 1em;
+    padding: 0 1em;
+}
+
+.footer__content__filter-name {
+    padding: 1em 2em .5em 2em;
+    color: $white-font-color;
+    font-size: 1.2em;
+    &:hover {
+        background: rgba(82, 203, 125, 0.2);
+    }
+}
+
+.footer__joblist {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    color: $white-font-color;
+}
+
+.footer__joblist-item {
+    padding: 1em;
+    background: rgba(82, 203, 125, 0.2);
+}
+
+.design {
+    border-left: 5px solid $red-color;
+}
+
+.dev {
+    border-left: 5px solid $blue-color;
+}
+
+.design-filter {
+    border-bottom: 4px solid $red-color;
+}
+
+.dev-filter {
+    border-bottom: 4px solid $blue-color;
+}
+
+.marketing-filter {
+    border-bottom: 4px solid $orange-color;
+}
+
+.verwaltung-filter {
+    border-bottom: 4px solid $purple-color;
+}
+
+.arrow {
+    background: none;
+    appearance: none;
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+    color: $white-font-color;
+}
+
+.arrow.up {
+    transform: rotate(180deg);
+}
+
+.no-list {
+    list-style: none;
+}
+
+@media only screen and (max-width: 1700px) {
+    .footer__content__filter-container {
+        position: relative;
+    }
+
+    .footer__content__filter-items-container {
+        position: absolute;
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+        top: 4.5em;
+        background-color: hsl(141, 54%, 20%);
+        padding: 1em;
+        box-shadow: 0px 0px 7px rgb(34, 34, 34);
+    }
+
+    .footer__content__filter-name {
+        padding: 0.5em;
+
+    }
+
+    .design-filter {
+        border: none;
+        border-left: 4px solid $red-color;
+    }
+    
+    .dev-filter {
+        border: none;
+        border-left: 4px solid $blue-color;
+    }
+    
+    .marketing-filter {
+        border: none;
+        border-left: 4px solid $orange-color;
+    }
+    
+    .verwaltung-filter {
+        border: none;
+        border-left: 4px solid $purple-color;
+    }
+}
