@@ -2,9 +2,19 @@ const express = require('express')
 const nodemailer = require('nodemailer')
 const cors = require('cors')
 const creds = require('./config')
+const fs = require('fs')
+const path = require('path')
+const bodyParser = require('body-parser')
+const axios = require('axios')
 
 const app = express()
 const router = express.Router()
+const url = "http://localhost:3001/send"
+
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use('/', router)
 
 const transport = {
     service: 'Outlook365',
@@ -26,15 +36,16 @@ transporter.verify((error, success) => {
     }
 })
 
-router.post('/send', (req, res, next) => {
+app.post('/send', (req, res) => {
     var name = req.body.name
     var email = req.body.email
     var subject = req.body.subject
     var message = req.body.message
-    var content= `Absender: ${name} \n E-Mail: ${email} \n Betreff: ${subject} \n Nachricht: ${message}`
+    var content = `Absender: ${name} \nE-Mail des Absenders: ${email} \nBetreff: \n${subject} \nNachricht: \n${message}`
+    console.log(req.body)
 
     var mail = {
-        from: name,
+        from: creds.email,
         to: creds.recev,
         subject: `Neue Kontaktanfrage über das Kontaktformular`,
         text: content
@@ -53,9 +64,15 @@ router.post('/send', (req, res, next) => {
     })
 })
 
-app.use(cors())
-app.use(express.json())
-app.use('/', router)
+app.use(express.static(path.resolve(__dirname, './client/build')))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './client/build', 'index.html'))
+})
+
+app.get('/send', (req,res) => {
+    res.sendFile(path.resolve(__dirname, '.client/build', 'index.html'))
+})
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => console.log(`Server is listening on Port ${PORT}`))
