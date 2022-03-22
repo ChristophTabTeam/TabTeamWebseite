@@ -2,7 +2,7 @@
 
 dies ist das Repository von der TabTeam Webseite
 
-## start des Develeopment Prozesses
+## Start des Development Prozesses
 
 um auf eine funktionierende development Webseite zu kommen führe im Haupt-Directory den Befehlt
 
