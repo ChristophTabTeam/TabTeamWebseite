@@ -6,6 +6,6 @@ $red-color: #BF155E;
 $purple-color: #6F58E6;
 $blue-color: #0169D4;
 $orange-color: #F0B10C;
-$box-shadow: 0 0 5px rgb(29, 29, 29);
+$box-shadow: 0 0 10px #202020;
 $animation-speed: 0.3s;
-$gradient: linear-gradient(#204f31, $accent-color)
+$gradient: linear-gradient(to right, hsl(140, 32%, 40%), hsl(142, 20%, 34%))

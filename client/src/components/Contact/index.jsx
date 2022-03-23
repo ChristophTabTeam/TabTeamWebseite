@@ -1,39 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 import '../../styles/Contact.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
-import axios from 'axios'
+import { faPaperPlane, faUser, faEnvelope, faComment } from '@fortawesome/free-regular-svg-icons'
 
 function Contact() {
-    const [name, setName] = useState(null)
-    const [email, setEmail] = useState(null)
-    const [subject, setSubject] = useState(null)
-    const [message, setMessage] = useState(null)
-    const formData = ({
-        name: name,
-        email: email,
-        subject: subject,
-        message: message
-    })
     const [sent, setSent] = useState(false)
-    const nameRef = useRef()
-    const emailRef = useRef()
-    const subjectRef = useRef()
-    const messageRef = useRef()
-
-    const clearForm = () => {
-        nameRef.current.value = null
-        emailRef.current.value = null
-        subjectRef.current.value = null
-        messageRef.current.value = null
-    }
-
-    useEffect(() => {
-        const timer = setTimeout(() => clearForm, 1000)
-        return () => {
-            clearTimeout(timer)
-        }
-    }, [sent])
 
     return (
         <div className='Contact' id='contact'>
@@ -49,10 +20,6 @@ function Contact() {
                     <p>
                         TabTeam arbeitet <span className='green uppercase'>digital</span> und <span className='green uppercase'>zuvorkommend</span>.
                     </p>
-                    {formData.name}
-                    {formData.email}
-                    {formData.subject}
-                    {formData.message}
                 </div>
             </div>
             <div className='contact__second'>
@@ -66,27 +33,19 @@ function Contact() {
                                 <div className='contact__iphone-notch-camera'/>
                             </div>
                             <label className='contact__form-input-label'>
-                                <input type="text" name="name" placeholder='Name' ref={nameRef} onChange={() => {
-                                    setName(nameRef.current.value)
-                                }} className='contact__form-item contact__input '/>
-                                <span className='contact__form-input-icon'></span>
+                                <input type="text" name="name" placeholder='Name'className='contact__form-item contact__input '/>
+                                <span className='contact__form-input-icon'><FontAwesomeIcon icon={faUser} className='contact__icon'/></span>
                             </label>
                             <label className='contact__form-input-label'>
-                                <input type="email" name="email" placeholder='E-Mail' ref={emailRef} onChange={() => {
-                                    setEmail(emailRef.current.value)
-                                }} className='contact__form-item contact__input'/>
-                                <span className='contact__form-input-icon'></span>
+                                <input type="email" name="email" placeholder='E-Mail' className='contact__form-item contact__input'/>
+                                <span className='contact__form-input-icon'><FontAwesomeIcon icon={faEnvelope} className='contact__icon'/></span>
                             </label>
                             <label className='contact__form-input-label'>
-                                <input type="text" name="subject" placeholder='Betreff' ref={subjectRef} onChange={() => {
-                                    setSubject(subjectRef.current.value)
-                                }} className='contact__form-item contact__input'/>
-                                <span className='contact__form-input-icon'></span>
+                                <input type="text" name="subject" placeholder='Betreff' className='contact__form-item contact__input'/>
+                                <span className='contact__form-input-icon'><FontAwesomeIcon icon={faComment} className='contact__icon'/></span>
                             </label>
-                            <label>
-                                <textarea name="message" placeholder='Schicke den Papierflieger auf die Reise...' ref={messageRef} onChange={() => {
-                                    setMessage(messageRef.current.value)
-                                }} className='contact__form-item contact__textarea'/>
+                            <label className='contact__form-input-label'>
+                                <textarea name="message" placeholder='Schicke den Papierflieger auf die Reise...' className='contact__form-item contact__textarea'/>
                             </label>
                             <button type='submit' className='contact__submit-button'><FontAwesomeIcon icon={faPaperPlane} className='contact__icon'/></button>
                         </form>

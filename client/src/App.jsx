@@ -3,12 +3,13 @@ import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import Services from './components/Services';
 import Start from './components/Start';
-import Showroom from './components/Showroom';
 import Team from './components/Team';
 import Contact from './components/Contact';
 import './styles/App.scss';
 import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleInfo as infoCircleSolid } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   const year = new Date().getFullYear()
@@ -27,7 +28,7 @@ function App() {
           duration={300}
         >
           <div className='go-bottom-button'>
-            <ArrowDropDownCircleIcon sx={{ fontSize: 40}}/>
+            <FontAwesomeIcon icon={infoCircleSolid} className='go-bottom-icon'/>
           </div>
         </Link>
       </main>

@@ -12,6 +12,13 @@
     right: 50px;
     bottom: 50px;
     color: $white-font-color;
+    height: 40px;
+    aspect-ratio: 1/1;
+}
+
+.go-bottom-icon {
+    height: 100%;
+    width: 100%;
 }
 
 .socials__container {

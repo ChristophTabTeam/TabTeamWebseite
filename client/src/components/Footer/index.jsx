@@ -37,7 +37,7 @@ function Footer() {
         <footer className='Footer' id='footer'>
             <div className='footer__first'>
                 <div className='footer__left-wrapper'>
-                    <div className='footer__left-text'>
+                    <div className='textContainer'>
                         <h2><span className='green'>Rechtlich</span> sicher</h2>
                         <h1>mit <span className='green'>Datenschutz</span>.</h1>
                         <p>Alle unsere Cookie Richtlinien und Geschäftsdaten auf einen Blick. DSGVO ist uns wichtig.</p>
@@ -48,9 +48,9 @@ function Footer() {
                     <div className='footer__lists-wrapper'>
                         <ul className='footer__list'>
                             <li className='footer__list-item' onClick={() => {
-                                setContent('media')
+                                setContent('agb')
                             }}>
-                                <span className={(content === 'media') ? 'footer__list-item-name uppercase active' : 'footer__list-item-name uppercase'}>Media</span>
+                                <span className={(content === 'agb') ? 'footer__list-item-name uppercase active' : 'footer__list-item-name uppercase'}>AGB</span>
                             </li>
                             <li className='footer__list-item' onClick={() => {
                                 setContent('jobs')
@@ -58,24 +58,24 @@ function Footer() {
                                 <span className={(content === 'jobs') ? 'footer__list-item-name uppercase active' : 'footer__list-item-name uppercase'}>Jobs</span>
                             </li>
                             <li className='footer__list-item' onClick={() => {
-                                setContent('bewerbung')
+                                setContent('media')
                             }}>
-                                <span className={(content === 'bewerbung') ? 'footer__list-item-name uppercase active' : 'footer__list-item-name uppercase'}>Bewerbung</span>
-                            </li>
-                            <li className='footer__list-item' onClick={() => {
-                                setContent('agb')
-                            }}>
-                                <span className={(content === 'agb') ? 'footer__list-item-name uppercase active' : 'footer__list-item-name uppercase'}>AGB</span>
-                            </li>
-                            <li className='footer__list-item' onClick={() => {
-                                setContent('datenschutz')
-                            }}>
-                                <span className={(content === 'datenschutz') ? 'footer__list-item-name uppercase active' : 'footer__list-item-name uppercase'}>Datenschutz</span>
+                                <span className={(content === 'media') ? 'footer__list-item-name uppercase active' : 'footer__list-item-name uppercase'}>Media</span>
                             </li>
                             <li className='footer__list-item' onClick={() => {
                                 setContent('impressum')
                             }}>
                                 <span className={(content === 'impressum') ? 'footer__list-item-name uppercase active' : 'footer__list-item-name uppercase'}>Impressum</span>
+                            </li>
+                            <li className='footer__list-item' onClick={() => {
+                                setContent('bewerbung')
+                            }}>
+                                <span className={(content === 'bewerbung') ? 'footer__list-item-name uppercase active' : 'footer__list-item-name uppercase'}>Bewerbung</span>
+                            </li>
+                            <li className='footer__list-item' onClick={() => {
+                                setContent('datenschutz')
+                            }}>
+                                <span className={(content === 'datenschutz') ? 'footer__list-item-name uppercase active' : 'footer__list-item-name uppercase'}>Datenschutz</span>
                             </li>
                         </ul>
                         <RenderChapters/>

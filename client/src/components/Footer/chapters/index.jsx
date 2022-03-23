@@ -3,9 +3,10 @@ import '../../../styles/Footer.scss'
 import '../../../styles/Footer-Chapters.scss'
 import { Designer, DesignerDetails, FrontEndDeveloper, FrontEndDeveloperDetails } from './Jobs'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import $ from 'jquery'
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link, animateScroll as scroll } from "react-scroll";
+import Application from './Application';
+
+
 
 function Chapters() {
   return
@@ -23,12 +24,14 @@ export const Media = () => {
 
 export const Jobs = () => {
     const [activeJob, setActiveJob] = useState()
-    const [filter, setFilter] = useState()
+    const [setFilter] = useState()
     const [filterMenu, setFilterMenu] = useState()
     const [windowWidth, setWindowWidth] = useState()
+    const [selectedJob, setSelectedJob] = useState()
     const width = window.innerWidth
 
     useEffect(() => {
+        const width = window.innerWidth
         setWindowWidth(width)
         if (width < 1700) {
             setFilterMenu(false)
@@ -94,11 +97,7 @@ export const Jobs = () => {
 }
 
 export const Bewerbung = () => {
-    return (
-        <div>
-
-        </div>
-    )
+    return <Application/>
 }
 
 export const Agb = () => {

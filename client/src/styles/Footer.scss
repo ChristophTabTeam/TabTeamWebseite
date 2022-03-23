@@ -11,7 +11,6 @@
     height: 100%;
     background: $background-color;
     display: grid;
-    grid-auto-rows: 45%;
 }
 
 .footer__left-wrapper {
@@ -131,6 +130,7 @@
     height: 80%;
     padding: 3em;
     backdrop-filter: blur(50px) brightness(80%);
+    border-radius: 4em;
 }
 
 .footer__content {
@@ -161,12 +161,12 @@
         display: grid;
         grid-auto-rows: 50%;
         height: 200vh;
+        font-size: 0.65em;
     }
 
     .footer__first {
         grid-auto-rows: 40%;
         width: 100%;
-        font-size: 0.75em;
     }
 
     .footer__second {
@@ -178,13 +178,8 @@
         font-size: 1em;
     }
 
-    .footer__left-text {
-        padding: 1em;
-        max-width: 250px;
-    }
-
     .footer__lists-wrapper {
-        font-size: 0.6em;
+        font-size: .7em;
         gap: 2em;
         max-width: 230px;
     }
@@ -208,12 +203,12 @@
         display: grid;
         grid-auto-rows: 50%;
         height: 200vh;
+        font-size: 0.65em;
     }
 
     .footer__first {
         grid-auto-rows: 40%;
         width: 100%;
-        font-size: 0.9em;
     }
 
     .footer__second {
@@ -225,13 +220,8 @@
         font-size: 1em;
     }
 
-    .footer__left-text {
-        padding: 1em;
-        max-width: 250px;
-    }
-
     .footer__lists-wrapper {
-        font-size: 0.6em;
+        font-size: .65em;
         gap: 2em;
         max-width: 230px;
     }
@@ -255,41 +245,15 @@
         display: grid;
         grid-auto-rows: 50%;
         height: 200vh;
-    }
-
-    .footer__first {
-        grid-auto-rows: 40%;
-        width: 100%;
-        font-size: 0.9em;
-    }
-
-    .footer__second {
-        font-size: 0.5em;
-        width: 100%;
-    }
-
-    .footer__left-wrapper {
-        font-size: 1em;
-    }
-
-    .footer__left-text {
-        padding: 1em;
-        max-width: 300px;
+        font-size: 0.8em;
     }
 
     .footer__lists-wrapper {
-        font-size: 0.6em;
-        gap: 2em;
         max-width: 270px;
     }
 
     .footer__content {
-        font-size: 1.3em;
         height: 85%;
-    }
-
-    .footer__content-wrapper {
-        height: 90%;
     }
 
     .footer__list {
@@ -304,39 +268,20 @@
         height: 200vh;
     }
 
-    .footer__first {
-        grid-auto-rows: 40%;
-        width: 100%;
-        font-size: 1.2em;
-    }
-
-    .footer__second {
-        font-size: 0.5em;
-        width: 100%;
-    }
-
-    .footer__left-wrapper {
-        font-size: 1em;
-    }
-
-    .footer__left-text {
-        padding: 1em;
-        max-width: 350px;
-    }
-
     .footer__lists-wrapper {
-        font-size: 0.6em;
-        gap: 2em;
         max-width: 320px;
     }
+}
 
-    .footer__content {
-        font-size: 1.5em;
-        height: 85%;
+@media (min-width: 425px) {
+    .Footer {
+        font-size: 0.9em;
     }
+}
 
-    .footer__content-wrapper {
-        height: 90%;
+@media (min-width: 600px) {
+    .Footer {
+        font-size: 1.3em;
     }
 }
 
@@ -348,33 +293,14 @@
     }
 
     .footer__first {
-        grid-auto-rows: 40%;
-        width: 100%;
-        font-size: 1.2em;
-    }
-
-    .footer__second {
-        font-size: 0.5em;
-        width: 100%;
-    }
-
-    .footer__left-wrapper {
-        font-size: 1.2em;
-    }
-
-    .footer__left-text {
-        padding: 1em;
-        max-width: 500px;
+        grid-auto-rows: 50%;
     }
 
     .footer__lists-wrapper {
-        font-size: 0.8em;
-        gap: 2em;
         max-width: 450px;
     }
 
     .footer__content {
-        font-size: 2em;
         height: 100%;
     }
 
@@ -389,8 +315,8 @@
 }
 
 @media only screen and (min-width: 1024px) {
-    .footer__content {
-        font-size: 2.3em;
+    .Footer {
+        font-size: 1.5em;
     }
 }
 
@@ -401,34 +327,17 @@
     }
 
     .footer__first {
-        grid-auto-rows: 40%;
+        grid-auto-rows: 50%;
         width: 35%;
-        font-size: 1.2em;
     }
 
     .footer__second {
-        font-size: 0.5em;
+        font-size: 0.6em;
         width: 65%;
     }
 
-    .footer__left-wrapper {
-        font-size: 1.2em;
-    }
-
-    .footer__left-text {
-        padding: 1em;
-        max-width: 500px;
-    }
-
     .footer__lists-wrapper {
-        font-size: 0.7em;
-        gap: 2em;
         max-width: 450px;
-    }
-
-    .footer__content {
-        font-size: 2em;
-        height: 100%;
     }
 
     .footer__content-wrapper {
@@ -438,14 +347,6 @@
 }
 
 @media only screen and (min-width: 2000px) {
-    .Footer {
-        font-size: 1.1em;
-    }
-
-    .footer__left-text {
-        max-width: 600px;
-    }
-
     .footer__lists-wrapper {
         max-width: 500px;
     }
