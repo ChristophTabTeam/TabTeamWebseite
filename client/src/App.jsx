@@ -6,7 +6,6 @@ import Start from './components/Start';
 import Team from './components/Team';
 import Contact from './components/Contact';
 import './styles/App.scss';
-import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleInfo as infoCircleSolid } from '@fortawesome/free-solid-svg-icons'
@@ -17,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Navigation/>
-      <main>
+      <main className='Main snaps'>
         <Start/>
         <Services/>
         <Team/>

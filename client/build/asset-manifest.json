@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0c99430a.css",
+    "main.js": "/static/js/main.b6f3f2d5.js",
+    "static/media/Background-Website.png": "/static/media/Background-Website.720c17a2bea5b3f9a6cd.png",
+    "static/media/1593508965263_MO-1532-U28R55.png": "/static/media/1593508965263_MO-1532-U28R55.24f8fed7329549ce9be8.png",
+    "static/media/tabteam-logo.png": "/static/media/tabteam-logo.0490257b65537f87443e.png",
+    "static/media/discord-lines.svg": "/static/media/discord-lines.5ba012bbe5cddebaf36e.svg",
+    "static/media/discord-filled.svg": "/static/media/discord-filled.87cf01d54ed23f1dfaa3.svg",
+    "static/media/instagram-filled.svg": "/static/media/instagram-filled.0e4e9debee93b65dff9c.svg",
+    "static/media/instagram-lines.svg": "/static/media/instagram-lines.1bf1fd0165e7973d440b.svg",
+    "static/media/facebook-lines.svg": "/static/media/facebook-lines.0ab99c48232364bd2869.svg",
+    "static/media/linkedin-in-lines.svg": "/static/media/linkedin-in-lines.464bf5cf7c466348fff7.svg",
+    "static/media/linkedin-in-filled.svg": "/static/media/linkedin-in-filled.c8e82a55f9c2a58d9db3.svg",
+    "static/media/facebook-filled.svg": "/static/media/facebook-filled.7cca20520e11c06610f0.svg",
+    "static/media/logo-lines.svg": "/static/media/logo-lines.8ab3091bd0ade4e94709.svg",
+    "static/media/icon.svg": "/static/media/icon.3d04821da64b0a6b3e26.svg",
+    "index.html": "/index.html",
+    "main.0c99430a.css.map": "/static/css/main.0c99430a.css.map",
+    "main.b6f3f2d5.js.map": "/static/js/main.b6f3f2d5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c99430a.css",
+    "static/js/main.b6f3f2d5.js"
+  ]
+}

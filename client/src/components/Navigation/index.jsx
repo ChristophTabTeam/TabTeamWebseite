@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import '../../styles/Navigation.scss'
-import PeopleIcon from '@mui/icons-material/People';
-import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLightbulb as lightBulbIconSolid, faPaperPlane as paperPlaneSolid } from '@fortawesome/free-solid-svg-icons'
-import { faLightbulb as lightBulbIconRegular, faPaperPlane as paperPlaneRegular } from '@fortawesome/free-regular-svg-icons'
+import { faLightbulb as lightBulbIconSolid, faPaperPlane as paperPlaneSolid, faPeopleGroup as peopleSolid } from '@fortawesome/free-solid-svg-icons'
 
 function Navigation() {
     const [activeSection, setActiveSection] = useState("start")
     const [offsetTop, setOffsetTop] = useState()
+    const [hoveredIcon, setHoveredIcon] = useState()
 
     function ActiveSection() {
         const height = window.innerHeight
@@ -40,40 +38,6 @@ function Navigation() {
         }
     }
 
-    
-
-    function RenderTabTeamIcon() {
-        if (activeSection === 'start') {
-            return <TabTeamIcon/>
-        } else {
-            return <TabTeamOutlineIcon/>
-        }
-    }
-
-    function RenderServicesIcon() {
-        if (activeSection === 'services') {
-            return <FontAwesomeIcon icon={lightBulbIconSolid} className='nav__icon'/>
-        } else {
-            return <FontAwesomeIcon icon={lightBulbIconRegular} className='nav__icon'/>
-        }
-    }
-
-    function RenderTeamIcon() {
-        if (activeSection === 'team') {
-            return <TeamIconSizing/>
-        } else {
-            return <TeamOutlinedSizing/>
-        }
-    }
-
-    function RenderContactIcon() {
-        if (activeSection === 'contact') {
-            return <FontAwesomeIcon icon={paperPlaneSolid} className='nav__icon'/>
-        } else {
-            return <FontAwesomeIcon icon={paperPlaneRegular} className='nav__icon'/>
-        }
-    }
-
     useEffect(() =>{
         ActiveSection()
     }, [])
@@ -92,93 +56,81 @@ function Navigation() {
     }, [offsetTop])
 
     return (
-        <>
-            <nav className="Navigation">
-                <div className='nav__wrapper'>
-                    <ul className="nav__container">
-                        <Link 
-                            to='start'
-                            smooth={true}
-                            duration={300}
-                        >
-                            <li className='nav__icon-subcontainer'>
-                                <RenderTabTeamIcon/>
-                                <span className={(activeSection === 'start') ? 'nav__section-name active' : 'nav__section-name'}>Home</span>
-                            </li>
-                        </Link>
-                        <Link 
-                            to='services'
-                            smooth={true}
-                            duration={300}
-                        >
-                            <li className='nav__icon-subcontainer'>
-                                <RenderServicesIcon/>
-                                <span className={(activeSection === 'services') ? 'nav__section-name active' : 'nav__section-name'}>Services</span>
-                            </li>
-                        </Link>
-                        <Link 
-                            to='team'
-                            smooth={true}
-                            duration={300}
-                        >
-                            <li className='nav__icon-subcontainer'>
-                                <RenderTeamIcon/>
-                                <span className={(activeSection === 'team') ? 'nav__section-name active' : 'nav__section-name'}>Team</span>
-                            </li>
-                        </Link>
-                        <Link 
-                            to='contact'
-                            smooth={true}
-                            duration={300}
-                        >
-                            <li className='nav__icon-subcontainer'>
-                                <RenderContactIcon/>
-                                <span className={(activeSection === 'contact') ? 'nav__section-name active' : 'nav__section-name'}>Kontakt</span>
-                            </li>
-                        </Link>
-                    </ul>
-                </div>
-            </nav>
-        </>
+        <nav className="Navigation">
+            <div className='nav__wrapper'>
+                <ul className="nav__container">
+                    <Link 
+                        to='start'
+                        smooth={true}
+                        duration={300}
+                        onMouseEnter={() => {
+                            setHoveredIcon('start')
+                        }}
+                        onMouseLeave={() => {
+                            setHoveredIcon('')
+                        }}
+                    >
+                        <li className='nav__icon-subcontainer'>
+                            {(activeSection === 'start') ? <div className='tabteam-icon'/> : <div className={(hoveredIcon === 'start') ? 'tabteam-icon' : 'tabteam-outlineicon'}/> }
+                            <span className={(activeSection === 'start') ? 'nav__section-name active' : 'nav__section-name'}>Home</span>
+                            <span className={(hoveredIcon === 'start') ? 'nav__section-name hovered' : 'nav__section-name'}>{(activeSection === 'start') ? '' : 'Home'}</span>
+                        </li>
+                    </Link>
+                    <Link
+                        to='services'
+                        smooth={true}
+                        duration={300}
+                        onMouseEnter={() => {
+                            setHoveredIcon('services')
+                        }}
+                        onMouseLeave={() => {
+                            setHoveredIcon('')
+                        }}
+                    >
+                        <li className='nav__icon-subcontainer'>
+                            {(activeSection === 'services') ? <FontAwesomeIcon icon={lightBulbIconSolid} className='nav__icon'/> : <FontAwesomeIcon icon={lightBulbIconSolid} className='nav__icon-stroke'/>}
+                            <span className={(activeSection === 'services') ? 'nav__section-name active' : 'nav__section-name'}>Services</span>
+                            <span className={(hoveredIcon === 'services') ? 'nav__section-name hovered' : 'nav__section-name'}>{(activeSection === 'services') ? '' : 'Services'}</span>
+                        </li>
+                    </Link>
+                    <Link 
+                        to='team'
+                        smooth={true}
+                        duration={300}
+                        onMouseEnter={() => {
+                            setHoveredIcon('team')
+                        }}
+                        onMouseLeave={() => {
+                            setHoveredIcon('')
+                        }}
+                    >
+                        <li className='nav__icon-subcontainer'>
+                            {(activeSection === 'team') ? <FontAwesomeIcon icon={peopleSolid} className='nav__icon'/> : <FontAwesomeIcon icon={peopleSolid} className='nav__icon-stroke'/>}
+                            <span className={(activeSection === 'team') ? 'nav__section-name active' : 'nav__section-name'}>Team</span>
+                            <span className={(hoveredIcon === 'team') ? 'nav__section-name hovered' : 'nav__section-name'}>{(activeSection === 'team') ? '' : 'Team'}</span>
+                        </li>
+                    </Link>
+                    <Link 
+                        to='contact'
+                        smooth={true}
+                        duration={300}
+                        onMouseEnter={() => {
+                            setHoveredIcon('contact')
+                        }}
+                        onMouseLeave={() => {
+                            setHoveredIcon('')
+                        }}
+                    >
+                        <li className='nav__icon-subcontainer'>
+                            {(activeSection === 'contact') ? <FontAwesomeIcon icon={paperPlaneSolid} className='nav__icon'/> : <FontAwesomeIcon icon={paperPlaneSolid} className='nav__icon-stroke'/>}
+                            <span className={(activeSection === 'contact') ? 'nav__section-name active' : 'nav__section-name'}>Kontakt</span>
+                            <span className={(hoveredIcon === 'contact') ? 'nav__section-name hovered' : 'nav__section-name'}>{(activeSection === 'contact') ? '' : 'Contact'}</span>
+                        </li>
+                    </Link>
+                </ul>
+            </div>
+        </nav>
     )
 }
 
 export default Navigation
-
-const TabTeamOutlineIcon = () => {
-    return (
-        <>
-            <div className='tabteam-outlineicon'/>
-        </>
-    )
-}
-
-const TabTeamIcon = () => {
-    return (
-        <>
-            <div className='tabteam-icon'/>
-        </>
-    )
-}
-
-function TeamIconSizing() {
-    const width = window.innerWidth
-    if (width <= 300) {
-        return <PeopleIcon sx={{ fontSize: 30}}/>
-    } else if (width <= 500) {
-        return <PeopleIcon sx={{ fontSize: 35}}/>
-    } else {
-        return <PeopleIcon sx={{ fontSize: 40}}/>
-    }
-}
-
-function TeamOutlinedSizing() {
-    const width = window.innerWidth
-    if (width <= 300) {
-        return <PeopleAltOutlinedIcon sx={{ fontSize: 30}}/>
-    } else if (width <= 500) {
-        return <PeopleAltOutlinedIcon sx={{ fontSize: 35}}/>
-    } else {
-        return <PeopleAltOutlinedIcon sx={{ fontSize: 40}}/>
-    }
-}

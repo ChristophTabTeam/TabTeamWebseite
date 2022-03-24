@@ -26,7 +26,7 @@
     justify-content: center;
     width: 100%;
     position: absolute;
-    top: 20px;
+    top: 60px;
 }
 
 .logo {
@@ -46,11 +46,11 @@
 }
 
 .start__monitor {
-    background: url(../imgs/1593508965263_MO-1532-U28R55.png);
+    background: url(../imgs/monitor.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 100%;
+    width: 85%;
     height: 100%;
 }
 
@@ -273,6 +273,7 @@
         height: 100%;
         position: absolute;
         right: 0;
+        align-items: center;
     }
 
     .start__textContainer {

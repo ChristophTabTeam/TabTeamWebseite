@@ -26,6 +26,23 @@
 .nav__icon {
   height: 100%;
   aspect-ratio: 1/1;
+  max-height: 40px;
+  cursor: pointer;
+  transition-duration: $animation-speed;
+}
+
+.nav__icon-stroke {
+  fill-opacity: 0;
+  stroke: $white-font-color;
+  stroke-width: 2em;
+  height: 100%;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  transition-duration: $animation-speed;
+  &:hover {
+    fill-opacity: 1;
+    stroke-width: 0;
+  }
 }
 
 .nav__section-name {
@@ -39,7 +56,7 @@
     transition-duration: $animation-speed;
     left: 0;
     bottom: 0;
-}
+  }
 }
 
 .nav__section-name.active {
@@ -55,6 +72,12 @@
   }
 }
 
+.nav__section-name.hovered {
+  display: block;
+  font-size: 1.2em;
+  transition-duration: $animation-speed;
+}
+
 .tabteam-outlineicon {
   background: url(../components/Navigation/logo-lines.svg);
   background-position: center;
@@ -62,6 +85,7 @@
   background-size: contain;
   height: 40px;
   aspect-ratio: 1/1;
+  transition-duration: $animation-speed
 }
 
 .tabteam-icon {
@@ -71,9 +95,8 @@
   background-size: contain;
   height: 40px;
   aspect-ratio: 1/1;
+  transition-duration: $animation-speed;
 }
-
-
 
 @media only screen and (max-width: 300px) {
   .Navigation {
@@ -120,6 +143,10 @@
     bottom: 50px;
     font-size: 1.2em;
     display: block;
+  }
+
+  .nav__section-name.hovered {
+    font-size: 1.2em;
   }
 }
 
@@ -169,6 +196,10 @@
     font-size: 1.2em;
     display: block;
   }
+
+  .nav__section-name.hovered {
+    font-size: 1.2em;
+  }
 }
 
 @media only screen and (min-width: 375px) {
@@ -204,6 +235,10 @@
       bottom: 65px;
       font-size: 1.4em;
       display: block;
+    }
+
+    .nav__section-name.hovered {
+      font-size: 1.4em;
     }
 }
 
@@ -246,6 +281,10 @@
     bottom: 65px;
     font-size: 1.4em;
     display: block;
+  }
+
+  .nav__section-name.hovered {
+    font-size: 1.4em;
   }
 
 }
@@ -303,7 +342,6 @@
     font-size: 1.4em;
     display: block;
   }
-
 }
 
 @media only screen and (min-width: 1024px) {

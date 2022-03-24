@@ -68,7 +68,7 @@ function Start() {
             </div>
             <div className='start__grid'>
                 <div className='start__first'>
-                    <div className='start__monitor'/>
+                    <div className="start__monitor"></div>
                 </div>
                 <div className='start__second'>
                     <div className='textContainer'>  

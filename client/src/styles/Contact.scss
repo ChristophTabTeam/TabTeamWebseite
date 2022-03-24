@@ -61,15 +61,22 @@
 
 .contact__iphone {
     height: 79%;
-    border: 18px solid rgb(69, 69, 69);
+    border: 20px solid rgb(69, 69, 69);
     aspect-ratio: 9/19.5;
     border-radius: 2.5em;
-    background: linear-gradient(180deg, rgba(100,112,105,1) 0%, rgba(82,204,124,1) 45%);
     background-size: contain;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+}
+
+.contact__iphone-background {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(100,112,105,1) 0%, rgba(82,204,124,1) 45%);
+    border-radius: 1.7em;
+    box-shadow: $box-shadow;
 }
 
 .contact__form-wrapper {
@@ -181,11 +188,12 @@ input:focus, textarea:focus {
     box-sizing: border-box;
     padding: 1.5em;
     border: none;
-    background: #2e7045;
+    background: linear-gradient(180deg, rgba(100,112,105,1) 0%, rgba(82,204,124,1) 50%);
     color: $white-font-color;
     border-radius: 1.5em 0.5em;
     width: 30%;
     bottom: -60px;
+    box-shadow: $box-shadow;
 }
 
 .contact__icon {

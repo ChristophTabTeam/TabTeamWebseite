@@ -24,6 +24,7 @@ function Contact() {
             </div>
             <div className='contact__second'>
                 <div className='contact__iphone'>
+                    <div className='contact__iphone-background'>
                         <form method="POST" onSubmit={() => {
                             setSent(true)
                         }} action="" className='contact__form'>
@@ -49,6 +50,7 @@ function Contact() {
                             </label>
                             <button type='submit' className='contact__submit-button'><FontAwesomeIcon icon={faPaperPlane} className='contact__icon'/></button>
                         </form>
+                    </div>
                 </div>
             </div>
         </div>
