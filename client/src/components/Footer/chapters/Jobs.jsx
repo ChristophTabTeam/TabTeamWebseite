@@ -18,7 +18,7 @@ export const Designer = () => {
     )
 }
 
-export const DesignerDetails = () => {
+export const DesignerDetails = ({switchToApplication}) => {
     return (
         <>
             <h2 className='footer__job-title'>Mediengestalter (m/w/d)</h2>
@@ -55,6 +55,8 @@ export const DesignerDetails = () => {
                 Ansprechpartner: Alexander Diermeyer<br/>
                 <a href='mailto:bewerbung@tabteam.media'>bewerbung@tabteam.media</a>
             </p>
+            <p className='footer__job-description'>oder bewerbe dich direkt hier</p>
+            <button onClick={switchToApplication} className='footer__application-button'>Jetzt Bewerben</button>
         </>
     )
 }
@@ -68,7 +70,7 @@ export const FrontEndDeveloper = () => {
     )
 }
 
-export const FrontEndDeveloperDetails = () => {
+export const FrontEndDeveloperDetails = ({switchToApplication}) => {
     return (
         <>
             <h2 className='footer__job-title'>Front End Developer (m/w/d)</h2>
@@ -106,6 +108,8 @@ export const FrontEndDeveloperDetails = () => {
                 Ansprechpartner: Christoph Labestin<br/>
                 <a href='mailto:bewerbung@tabteam.media'>bewerbung@tabteam.media</a>
             </p>
+            <p className='footer__job-description'>oder bewerbe dich direkt hier</p>
+            <button onClick={switchToApplication} className='footer__application-button'>Jetzt Bewerben</button>
         </>
     )
 }

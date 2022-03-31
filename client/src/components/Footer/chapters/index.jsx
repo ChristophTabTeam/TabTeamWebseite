@@ -22,7 +22,7 @@ export const Media = () => {
     )
 }
 
-export const Jobs = () => {
+export const Jobs = ({switchToApplication}) => {
     const [activeJob, setActiveJob] = useState()
     const [setFilter] = useState()
     const [filterMenu, setFilterMenu] = useState()
@@ -39,6 +39,8 @@ export const Jobs = () => {
             setFilterMenu(true)
         }
     }, [])
+
+
 
     return (
         <div className='footer__content'>
@@ -67,7 +69,7 @@ export const Jobs = () => {
             </div>
             <div className='footer__joblist'>
                 <div className='footer__joblist-item design'>
-                    {(activeJob === 'designer') ? <DesignerDetails/> : <Designer/>}
+                    {(activeJob === 'designer') ? <DesignerDetails switchToApplication={switchToApplication}/> : <Designer/>}
                     <button onClick={() => {
                         if (activeJob === 'designer') {
                             setActiveJob('')
@@ -80,7 +82,8 @@ export const Jobs = () => {
                     </button>
                 </div>
                 <div className='footer__joblist-item dev'>
-                    {(activeJob === 'frontenddev') ? <FrontEndDeveloperDetails/> : <FrontEndDeveloper/>}
+                    {(activeJob === 'frontenddev') ? <FrontEndDeveloperDetails switchToApplication={switchToApplication}/> : <FrontEndDeveloper/>}
+                    
                     <button onClick={() => {
                         if (activeJob === 'frontenddev') {
                             setActiveJob('')

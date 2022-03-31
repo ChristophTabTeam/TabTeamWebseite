@@ -27,7 +27,7 @@ function Contact() {
                     <div className='contact__iphone-background'>
                         <form method="POST" onSubmit={() => {
                             setSent(true)
-                        }} action="" className='contact__form'>
+                        }} action="send" className='contact__form'>
                             <div className='contact__iphone-notch'>
                                 <div className='contact__iphone-notch-sensor'/>
                                 <div className='contact__iphone-notch-speaker'/>

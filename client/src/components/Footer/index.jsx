@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
 import { Impressum, Agb, Datenschutz, Bewerbung, Media, Jobs, AgbChapters, DatenschutzChapter } from './chapters/index'
 import '../../styles/Footer.scss'
+import { AgbPhrase, BewerbungPhrase, DatenschutzPhrase, ImpressumPhrase, JobsPhrase, MediaPhrase } from './Phrases'
 
 function Footer() {
     const [content, setContent] = useState('jobs')
+
+    function switchToApplication() {
+        setContent('bewerbung')
+    }
 
     function RenderContent() {
         if (content === 'media') {
             return <Media/>
         } else if (content === 'jobs') {
-            return <Jobs/>
+            return <Jobs switchToApplication={switchToApplication}/>
         } else if (content === 'bewerbung') {
             return <Bewerbung/>
         } else if (content === 'agb') {
@@ -33,16 +38,30 @@ function Footer() {
         }
     }
 
+    function RenderPhrase() {
+        if (content === 'agb') {
+            return <AgbPhrase/>
+        } else if (content === 'jobs') {
+            return <JobsPhrase/>
+        } else if (content === 'media') {
+            return <MediaPhrase/>
+        } else if (content === 'impressum') {
+            return <ImpressumPhrase/>
+        } else if (content === 'bewerbung') {
+            return <BewerbungPhrase/>
+        } else if (content === 'datenschutz') {
+            return <DatenschutzPhrase/>
+        }
+        else {
+            return null
+        }
+    }
+
     return (
         <footer className='Footer' id='footer'>
             <div className='footer__first'>
                 <div className='footer__left-wrapper'>
-                    <div className='textContainer'>
-                        <h2><span className='green'>Rechtlich</span> sicher</h2>
-                        <h1>mit <span className='green'>Datenschutz</span>.</h1>
-                        <p>Alle unsere Cookie Richtlinien und Geschäftsdaten auf einen Blick. DSGVO ist uns wichtig.</p>
-                        <p>TabTeam arbeitet <span className='green'>SCHÜTZEND</span> und <span className='green'>SICHER</span>.</p>
-                    </div>
+                    <RenderPhrase/>
                 </div>
                 <div className='footer__list-container'>
                     <div className='footer__lists-wrapper'>

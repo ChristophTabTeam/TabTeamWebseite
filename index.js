@@ -36,7 +36,7 @@ transporter.verify((error, success) => {
     }
 })
 
-app.post('/', (req, res) => {
+app.post('/send', (req, res) => {
     var name = req.body.name
     var email = req.body.email
     var subject = req.body.subject
@@ -46,7 +46,7 @@ app.post('/', (req, res) => {
 
     var mail = {
         from: creds.email,
-        to: creds.recev,
+        to: creds.contact,
         subject: `Neue Kontaktanfrage über das Kontaktformular`,
         text: content
     }
@@ -62,6 +62,38 @@ app.post('/', (req, res) => {
             })
         }
     })
+})
+
+app.post('/application', (req, res) => {
+    var firstName = req.body.firstName
+    var lastName = req.body.lastName
+    var phone = req.body.footerPhone
+    var email = req.body.footerEmail
+    var job = req.body.footerAppSelect
+    var cv = req.body.footerCv
+    var letter = req.body.footerLetterOfApplication
+    var files = req.body.moreFiles
+    var content = `Bewerber: ${firstName} ${lastName}\nKontaktdaten: \n Telefon: ${phone}\n E-Mail: ${email} `
+
+    var mail = {
+        from: creds.email,
+        to: creds.appli,
+        subject: `Neue Bewerbung auf die Stelle als ${job} ist eingegangen`,
+        text: content
+    }
+
+    transporter.sendMail(mail, (err, data) => {
+        if (err) {
+            require.json({
+                status: 'fail'
+            })
+        } else {
+            res.json({
+                status: 'success'
+            })
+        }
+    })
+
 })
 
 app.use(express.static(path.resolve(__dirname, './client/build')))
