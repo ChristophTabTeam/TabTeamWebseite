@@ -53,13 +53,11 @@ app.post('/send', (req, res) => {
 
     transporter.sendMail(mail, (err, data) => {
         if (err) {
-            require.json({
+            req.json({
                 status: 'fail'
             })
         } else {
-            res.json({
-                status: 'success'
-            })
+            res.redirect('/')
         }
     })
 })
@@ -84,7 +82,7 @@ app.post('/application', (req, res) => {
 
     transporter.sendMail(mail, (err, data) => {
         if (err) {
-            require.json({
+            req.json({
                 status: 'fail'
             })
         } else {

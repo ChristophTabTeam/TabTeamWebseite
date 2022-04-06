@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.b79ff3df.css",
-    "main.js": "/static/js/main.aa7cd872.js",
+    "main.css": "/static/css/main.c5c2ec73.css",
+    "main.js": "/static/js/main.08484e1f.js",
     "static/media/Background-Website.png": "/static/media/Background-Website.720c17a2bea5b3f9a6cd.png",
     "static/media/monitor.png": "/static/media/monitor.b58ae4a2b0d51932df7b.png",
+    "static/media/Phone1__x2B__KORREKTUR__x2B__Kurven_4_xA0_Bild.svg": "/static/media/Phone1__x2B__KORREKTUR__x2B__Kurven_4_xA0_Bild.091e75a91c78d132f0ac.svg",
     "static/media/tabteam-logo.png": "/static/media/tabteam-logo.0490257b65537f87443e.png",
-    "static/media/discord-lines.svg": "/static/media/discord-lines.b51703f33a56fdedc36b.svg",
-    "static/media/discord-filled.svg": "/static/media/discord-filled.304faab24b3b74628a73.svg",
-    "static/media/instagram-filled.svg": "/static/media/instagram-filled.fb54e0f9fe669195ecdd.svg",
-    "static/media/instagram-lines.svg": "/static/media/instagram-lines.55aea172e50d64886248.svg",
-    "static/media/facebook-lines.svg": "/static/media/facebook-lines.3c2967178fd05d893b86.svg",
-    "static/media/linkedin-in-lines.svg": "/static/media/linkedin-in-lines.1a982ffab0d24ce73d43.svg",
-    "static/media/linkedin-in-filled.svg": "/static/media/linkedin-in-filled.24d509103d77c4dcc3ec.svg",
-    "static/media/facebook-filled.svg": "/static/media/facebook-filled.f627e334fae90a805208.svg",
-    "static/media/logo-lines.svg": "/static/media/logo-lines.d1ab7c6159d265b1a823.svg",
-    "static/media/icon.svg": "/static/media/icon.b079c160312a6e77ba18.svg",
+    "static/media/discord-lines.svg": "/static/media/discord-lines.5ba012bbe5cddebaf36e.svg",
+    "static/media/discord-filled.svg": "/static/media/discord-filled.87cf01d54ed23f1dfaa3.svg",
+    "static/media/instagram-filled.svg": "/static/media/instagram-filled.0e4e9debee93b65dff9c.svg",
+    "static/media/instagram-lines.svg": "/static/media/instagram-lines.1bf1fd0165e7973d440b.svg",
+    "static/media/facebook-lines.svg": "/static/media/facebook-lines.0ab99c48232364bd2869.svg",
+    "static/media/linkedin-in-lines.svg": "/static/media/linkedin-in-lines.464bf5cf7c466348fff7.svg",
+    "static/media/linkedin-in-filled.svg": "/static/media/linkedin-in-filled.c8e82a55f9c2a58d9db3.svg",
+    "static/media/facebook-filled.svg": "/static/media/facebook-filled.7cca20520e11c06610f0.svg",
+    "static/media/logo-lines.svg": "/static/media/logo-lines.8ab3091bd0ade4e94709.svg",
+    "static/media/icon.svg": "/static/media/icon.3d04821da64b0a6b3e26.svg",
     "index.html": "/index.html",
-    "main.b79ff3df.css.map": "/static/css/main.b79ff3df.css.map",
-    "main.aa7cd872.js.map": "/static/js/main.aa7cd872.js.map"
+    "main.c5c2ec73.css.map": "/static/css/main.c5c2ec73.css.map",
+    "main.08484e1f.js.map": "/static/js/main.08484e1f.js.map"
   },
   "entrypoints": [
-    "static/css/main.b79ff3df.css",
-    "static/js/main.aa7cd872.js"
+    "static/css/main.c5c2ec73.css",
+    "static/js/main.08484e1f.js"
   ]
 }

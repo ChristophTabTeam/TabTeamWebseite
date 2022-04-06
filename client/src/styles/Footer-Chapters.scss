@@ -2,11 +2,13 @@
 
 .footer__content__headline {
     font-size: 2.2em;
+    color: $accent-color;
 }
 
 .footer__content__chapter-headline {
     font-size: 1.7em;
     padding: 0.5em 0 0 0;
+    color: $accent-color;
 }
 
 .footer__content__text {
@@ -79,6 +81,7 @@
 .footer__joblist-item {
     padding: 1em;
     background: rgba(82, 203, 125, 0.2);
+    border-left: 7px $accent-color solid;
 }
 
 .design {
@@ -123,31 +126,99 @@
     list-style: none;
 }
 
+.media__content {
+    padding: 6em 9em;
+    box-sizing: border-box;
+}
+
+.footer__media-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+}
+
+.footer__media-button {
+    width: 50%;
+    text-align: center;
+    background: linear-gradient(0.25turn, #204f31, #358150, #204f31);
+    border-radius: 25px;
+    font-size: 1.3em;
+}
+
 // Application
 
 .footer__application {
-    width: 70%;
+    width: 100%;
     height: 100%;
-    font-size: 2em;
+    font-size: 1.8em;
     color: $white-font-color;
     box-sizing: border-box;
+    padding: 5em;
 }
 
 .footer__application > * {
     box-sizing: border-box;
 }
 
+.footer__application-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.footer__application-button {
+    position: relative;
+    width: 60%;
+    padding: 1em;
+    background: linear-gradient(0.25turn, #204f31, #358150, #204f31);
+    border: none;
+    color: $white-font-color;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.footer__application-button-icon {
+    fill-opacity: 0;
+    stroke: $white-font-color;
+    stroke-width: 1em;
+    transition-duration: $animation-speed;
+    width: 100%;
+    height: fit-content;
+    color: $white-font-color;
+    position: absolute;
+    left: 0;
+}
+
+.footer__application-button:hover + .footer__application-button-icon {
+    fill-opacity: 1;
+}
+
 .footer__app-form {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.footer__app-form-grid {
     display: grid;
     grid-template-areas: 
     'one two'
     'three four'
     'five five'
-    'six seven'
-    'eight nine'
     ;
-    gap: 1em;
+    gap: 2em;
+}
+
+.footer__app-files-container {
+    display: grid;
+    grid-auto-flow: column;
+    padding: 4em 0em;
     box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    gap: 3em;
 }
 
 .app_one {
@@ -187,17 +258,19 @@
 }
 
 .footer__app-input-label {
-    display: flex;
-    flex-direction: column;
     box-sizing: border-box;
+    display: flex;
 }
 
 .footer__app-input {
     height: 1em;
-    padding: 1em;
+    padding: 1.3em;
     width: 100%;
     font-size: 1em;
     box-sizing: border-box;
+    border-radius: 500px;
+    border: none;
+    background: $white-font-color;
 }
 
 .footer__app-input::placeholder {
@@ -206,27 +279,84 @@
 
 .footer__app-input-name {
     font-size: .8em;
+    width: max-content;
 }
 
 .footer__app-select {
     font-size: 1em;
-    padding: 0.3em;
+    padding: 0.7em;
+    border-radius: 500px;
+    background: $white-font-color;
 }
 
 .footer__app-input-file {
     font-size: 0.6em;
     position: relative;
     box-sizing: border-box;
+    width: 130px;
+}
+
+.footer__app-file-name {
+    display: grid;
+
 }
 
 .footer__app-input-file::-webkit-file-upload-button {
-    visibility: hidden;
+    display: none;
 }
 
-.app-cv {
-    
+.jobs__content {
+    padding: 2em 0 0 0;
 }
 
+.agb__content {
+    padding: 3em 0 0 0;
+}
+
+.footer__app-file {
+    display: flex;
+    color: black;
+    background: $white-font-color;
+    justify-content: space-between;
+    border-radius: 500px;
+}
+
+.footer__app-file-name {
+    background: $white-font-color;
+    padding: 0.5em 0 0.5em 1em;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 500px 0 0 500px;
+}
+
+.footer__app-file-icon {
+    background: linear-gradient(to right, hsl(140, 32%, 40%), hsl(142, 20%, 34%));
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+.file-icon {
+    color: $white-font-color;
+    height: 100%;
+}
+
+.footer__app-submit-button {
+    width: 50%;
+    margin: 0 auto;
+    padding: 1em;
+    background: linear-gradient(0.25turn, #204f31, #358150, #204f31);
+    border: none;
+    color: $white-font-color;
+    border-radius: 500px;
+    font-size: 0.8em;
+}
 
 @media only screen and (max-width: 1700px) {
     .footer__content__filter-container {

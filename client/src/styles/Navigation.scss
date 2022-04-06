@@ -21,13 +21,13 @@
   position: relative;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .nav__icon {
   height: 100%;
   aspect-ratio: 1/1;
   max-height: 40px;
-  cursor: pointer;
   transition-duration: $animation-speed;
 }
 
@@ -36,8 +36,8 @@
   stroke: $white-font-color;
   stroke-width: 2em;
   height: 100%;
+  max-height: 40px;
   aspect-ratio: 1/1;
-  cursor: pointer;
   transition-duration: $animation-speed;
   &:hover {
     fill-opacity: 1;
@@ -110,6 +110,14 @@
     height: 30px;
   }
 
+  .nav__icon-stroke {
+    height: 30px;
+  }
+
+  .nav__icon {
+    height: 30px;
+  }
+
   .tabteam-outlineicon {
     height: 30px;
   }
@@ -163,6 +171,14 @@
   }
 
   .tabteam-outlineicon {
+    height: 35px;
+  }
+
+  .nav__icon-stroke {
+    height: 35px;
+  }
+
+  .nav__icon {
     height: 35px;
   }
 
@@ -313,7 +329,7 @@
     display: grid;
     gap: 3.5em;
     backdrop-filter: none;
-    padding: 2em 1em;
+    padding: 2em 1.5em;
     border-radius: 0;
     position: relative;
     &::before {

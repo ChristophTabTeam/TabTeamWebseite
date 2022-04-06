@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react'
 import '../../styles/Navigation.scss'
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLightbulb as lightBulbIconSolid, faPaperPlane as paperPlaneSolid, faPeopleGroup as peopleSolid } from '@fortawesome/free-solid-svg-icons'
+import { faLightbulb as lightBulbIconSolid, faPaperPlane as paperPlaneSolid, faPeopleGroup as peopleSolid, faCircleInfo as infoCircleSolid } from '@fortawesome/free-solid-svg-icons'
 
 function Navigation() {
     const [activeSection, setActiveSection] = useState("start")
     const [offsetTop, setOffsetTop] = useState()
     const [hoveredIcon, setHoveredIcon] = useState()
+    const windowWidth = window.innerWidth
 
     function ActiveSection() {
         const height = window.innerHeight
@@ -32,11 +33,18 @@ function Navigation() {
                 setActiveSection('team')
             } else if (window.scrollY <= (height * 4 - 200)) {
                 setActiveSection('contact')
-            } else {
+            } else if (window.scrollY <= (height * 5 - 200)) {
+                setActiveSection('footer')
+            }
+            else {
                 setActiveSection()
             }
         }
     }
+
+    useEffect(() => {
+        setHoveredIcon('')
+    }, [activeSection])
 
     useEffect(() =>{
         ActiveSection()
@@ -56,6 +64,7 @@ function Navigation() {
     }, [offsetTop])
 
     return (
+        <>
         <nav className="Navigation">
             <div className='nav__wrapper'>
                 <ul className="nav__container">
@@ -73,7 +82,7 @@ function Navigation() {
                         <li className='nav__icon-subcontainer'>
                             {(activeSection === 'start') ? <div className='tabteam-icon'/> : <div className={(hoveredIcon === 'start') ? 'tabteam-icon' : 'tabteam-outlineicon'}/> }
                             <span className={(activeSection === 'start') ? 'nav__section-name active' : 'nav__section-name'}>Home</span>
-                            <span className={(hoveredIcon === 'start') ? 'nav__section-name hovered' : 'nav__section-name'}>{(activeSection === 'start') ? '' : 'Home'}</span>
+                            {(windowWidth < 768) ? '' : <span className={(hoveredIcon === 'start') ? 'nav__section-name hovered' : 'nav__section-name'}>{(activeSection === 'start') ? '' : 'Home'}</span>}
                         </li>
                     </Link>
                     <Link
@@ -110,7 +119,7 @@ function Navigation() {
                             <span className={(hoveredIcon === 'team') ? 'nav__section-name hovered' : 'nav__section-name'}>{(activeSection === 'team') ? '' : 'Team'}</span>
                         </li>
                     </Link>
-                    <Link 
+                    <Link
                         to='contact'
                         smooth={true}
                         duration={300}
@@ -124,12 +133,23 @@ function Navigation() {
                         <li className='nav__icon-subcontainer'>
                             {(activeSection === 'contact') ? <FontAwesomeIcon icon={paperPlaneSolid} className='nav__icon'/> : <FontAwesomeIcon icon={paperPlaneSolid} className='nav__icon-stroke'/>}
                             <span className={(activeSection === 'contact') ? 'nav__section-name active' : 'nav__section-name'}>Kontakt</span>
-                            <span className={(hoveredIcon === 'contact') ? 'nav__section-name hovered' : 'nav__section-name'}>{(activeSection === 'contact') ? '' : 'Contact'}</span>
+                            <span className={(hoveredIcon === 'contact') ? 'nav__section-name hovered' : 'nav__section-name'}>{(activeSection === 'contact') ? '' : 'Kontakt'}</span>
                         </li>
                     </Link>
                 </ul>
             </div>
         </nav>
+        
+        <Link 
+          to='footer'
+          smooth={true}
+          duration={300}
+        >
+          <div className='go-bottom-button'>
+            <FontAwesomeIcon icon={infoCircleSolid} className={(activeSection === 'footer') ? 'go-bottom-icon active' : 'go-bottom-icon'}/>
+          </div>
+        </Link>
+        </>
     )
 }
 

@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 function Jobs() {
     return (
@@ -56,7 +58,10 @@ export const DesignerDetails = ({switchToApplication}) => {
                 <a href='mailto:bewerbung@tabteam.media'>bewerbung@tabteam.media</a>
             </p>
             <p className='footer__job-description'>oder bewerbe dich direkt hier</p>
-            <button onClick={switchToApplication} className='footer__application-button'>Jetzt Bewerben</button>
+            <div className='footer__application-button-container'>
+                <button onClick={switchToApplication} className='footer__application-button'>Jetzt Bewerben
+                <span className='footer__application-button-icon'><FontAwesomeIcon icon={faPaperPlane}/></span></button>
+            </div>
         </>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Impressum, Agb, Datenschutz, Bewerbung, Media, Jobs, AgbChapters, DatenschutzChapter } from './chapters/index'
+import { Impressum, Agb, Datenschutz, Bewerbung, Media, Jobs, AgbChapters, DatenschutzChapter, JobsFilter } from './chapters/index'
 import '../../styles/Footer.scss'
 import { AgbPhrase, BewerbungPhrase, DatenschutzPhrase, ImpressumPhrase, JobsPhrase, MediaPhrase } from './Phrases'
 
@@ -33,6 +33,8 @@ function Footer() {
             return <AgbChapters/>
         } else if (content === 'datenschutz') {
             return <DatenschutzChapter/>
+        } else if (content === 'jobs') {
+            return <JobsFilter/>
         } else {
             return null
         }
@@ -102,8 +104,10 @@ function Footer() {
                 </div>
             </div>
             <div className='footer__second'>
-                <div className='footer__content-wrapper'>
-                    <RenderContent/>
+                <div className='backdrop__grayscale'>
+                    <div className='footer__content-wrapper'>
+                        <RenderContent/>
+                    </div>
                 </div>
             </div>
         </footer>

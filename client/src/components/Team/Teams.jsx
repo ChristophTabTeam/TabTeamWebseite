@@ -17,8 +17,10 @@ export const GeneralEmployees = (props) => {
                 </div>
                 <div className='team__employee-details-container'>                
                     <p className='team__employee-name'>Christoph Labestin</p>
-                    <p className='team__employee-job-title'>Geschäftsführer</p>
-                    <p className='team__employee-caption italic'>"iPad Allrounder und React Hero"</p>
+                    <div className='team__employee-title-and-caption'>
+                        <p className='team__employee-job-title'>Geschäftsführer</p>
+                        <p className='team__employee-caption italic'>"iPad Allrounder und React Hero"</p>
+                    </div>
                 </div>
             </div>
             <div className='team__employee'>
@@ -27,8 +29,10 @@ export const GeneralEmployees = (props) => {
                 </div>
                 <div className='team__employee-details-container'>
                     <p className='team__employee-name'>Alexander Diermeyer</p>
-                    <p className='team__employee-job-title'>Creative</p>
-                    <p className='team__employee-caption italic'>"Whiteboard Beschmierer und Photoshop Crack"</p>
+                    <div className='team__employee-title-and-caption'>
+                        <p className='team__employee-job-title'>Creative</p>
+                        <p className='team__employee-caption italic'>"Whiteboard Beschmierer und Photoshop Crack"</p>
+                    </div>
                 </div>
             </div>
             <div className='team__employee'>
@@ -37,8 +41,10 @@ export const GeneralEmployees = (props) => {
                 </div>
                 <div className='team__employee-details-container'>
                     <p className='team__employee-name'>Sascha Frank</p>
-                    <p className='team__employee-job-title'>IT Consultant</p>
-                    <p className='team__employee-caption italic'>"Back End Beschwörer und NAS Liebhaber"</p>
+                    <div className='team__employee-title-and-caption'>
+                        <p className='team__employee-job-title'>IT Consultant</p>
+                        <p className='team__employee-caption italic'>"Back End Beschwörer und NAS Liebhaber"</p>
+                    </div>
                 </div>
             </div>
         </div>

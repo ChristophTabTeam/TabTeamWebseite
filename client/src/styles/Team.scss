@@ -75,7 +75,7 @@
 .team__second-top-background {
     height: 50%;
     width: 100%;
-    background: url(../imgs/Background-Website.png);
+    background: url(../imgs/Background-Website.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -126,7 +126,7 @@
     position: absolute;
     left: +100vw;
     transition-duration: 0.5s;
-    background: url(../imgs/Background-Website.png);
+    background: url(../imgs/Background-Website.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -224,13 +224,53 @@
     height: max-content;
     text-align: center;
     position: absolute;
-    bottom: 14%;
-    font-size: 1.2em;
+    bottom: 11%;
+    font-size: 1em;
     z-index: 1;
+}
+
+.team__choose-team-group {
+    display: flex;
+    gap: 8.5em;
+}
+
+.team__choose-team-group.left {
+    justify-content: flex-start;
+    gap: 9.5em;
+}
+
+.team__choose-team-group.right {
+    justify-content: flex-end;
+    padding: 0 1em 0 0;
 }
 
 .team__choose-team-name {
     cursor: pointer;
+    color: $white-font-color;
+    position: relative;
+    &::before {
+        position: absolute;
+        height: 4px;
+        width: 0%;
+        background: $accent-color;
+        content: '';
+        bottom: -2px;
+        transition-duration: $animation-speed;
+    }
+}
+
+.team__choose-team-name.active {
+    position: relative;
+    cursor: pointer;
+    &::before {
+        position: absolute;
+        height: 4px;
+        width: 80%;
+        background: $accent-color;
+        content: '';
+        bottom: -2px;
+        transition-duration: $animation-speed;
+    }
 }
 
 @media only screen and (max-width: 300px) {
@@ -434,9 +474,8 @@
     }
 
     .team__employee-profilepic {
-        max-width: 90%;
-        max-height: 90%;
-        margin: 0 auto;
+        max-width: 100%;
+        max-height: 100%;
         aspect-ratio: 1/1;
     }
 
@@ -444,7 +483,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 1em 0em 0;
+        padding: 0em 0em 0;
         aspect-ratio: 1/1;
         margin: 0 auto;
     }
@@ -461,8 +500,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: .5em;
+        justify-content: space-between;
+        gap: .9em;
+        padding: 1em 0 0.9em 0;
     }
 
     .team__employee-caption {
@@ -583,7 +623,7 @@
     .team__second-top-background {
         height: 50%;
         width: 100%;
-        background: url(../imgs/Background-Website.png);
+        background: url(../imgs/Background-Website.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -597,7 +637,7 @@
         gap: 2em;
         z-index: 1;
         position: absolute;
-        top: -20%;
+        top: -18%;
         height: 100%;
         box-sizing: border-box;
     }
@@ -633,5 +673,12 @@
     
     .teamleiter {
         background: $red-color;
+    }
+
+    .team__employee-title-and-caption {
+        display: flex;
+        gap: 0.5em;
+        flex-direction: column;
+        align-items: center;
     }
 }

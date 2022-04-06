@@ -6,9 +6,6 @@ import Start from './components/Start';
 import Team from './components/Team';
 import Contact from './components/Contact';
 import './styles/App.scss';
-import { Link } from "react-scroll";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleInfo as infoCircleSolid } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
   const year = new Date().getFullYear()
@@ -21,15 +18,6 @@ function App() {
         <Services/>
         <Team/>
         <Contact/>
-        <Link 
-          to='footer'
-          smooth={true}
-          duration={300}
-        >
-          <div className='go-bottom-button'>
-            <FontAwesomeIcon icon={infoCircleSolid} className='go-bottom-icon'/>
-          </div>
-        </Link>
       </main>
       <Footer/>
       <div className='copyright__container'>

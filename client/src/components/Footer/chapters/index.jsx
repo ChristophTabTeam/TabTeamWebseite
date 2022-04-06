@@ -3,7 +3,6 @@ import '../../../styles/Footer.scss'
 import '../../../styles/Footer-Chapters.scss'
 import { Designer, DesignerDetails, FrontEndDeveloper, FrontEndDeveloperDetails } from './Jobs'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import MenuIcon from '@mui/icons-material/Menu';
 import Application from './Application';
 
 
@@ -16,59 +15,31 @@ export default Chapters
 
 export const Media = () => {
     return (
-        <div>
-
+        <div className='footer__content media__content'>
+            <p className='footer__content__sub-chapter-headline'>
+                Hier kannst Du direkt von unserer Cloud, sicher unsere Medien herunterladen. Wir stellen Dir hier Informationen
+                zur Verfügung, welche Du direkt aus erster Hand nutzen kannst. Wir ersparen dir hiermit die nervige Googlesuche
+                und das nutzen von nicht kompatiblen Dateien indem Du hier direkt auf den Goldtopf zugreifen kannst.
+            </p>
+            <p className='footer__content__sub-chapter-headline'>
+                Follow the Rainbow and klick the Button
+            </p>
+            <div className='footer__media-button-container'>
+                <a className='footer__media-button' href="https://tabteammedia.sharepoint.com/:f:/g/Ehp46YTAoYtCkPV6cKTNHqcBLGN-iSqE7iCnl4HD9MjCDg?e=VQWM4O">
+                    <p className='footer__media-button-text'>zu den Medien</p>
+                </a>
+            </div>
         </div>
     )
 }
 
 export const Jobs = ({switchToApplication}) => {
     const [activeJob, setActiveJob] = useState()
-    const [setFilter] = useState()
-    const [filterMenu, setFilterMenu] = useState()
-    const [windowWidth, setWindowWidth] = useState()
-    const [selectedJob, setSelectedJob] = useState()
-    const width = window.innerWidth
-
-    useEffect(() => {
-        const width = window.innerWidth
-        setWindowWidth(width)
-        if (width < 1700) {
-            setFilterMenu(false)
-        } else {
-            setFilterMenu(true)
-        }
-    }, [])
-
-
 
     return (
-        <div className='footer__content'>
-            <h1 className='footer__content__headline'>unsere Stellenanzeigen</h1>
-            <div className='footer__content__filter-container'>
-                {(width < 1700) ? <h2 className='footer__content__filter' onClick={() => {
-                    setFilterMenu(true)
-                }} onMouseLeave={() => {
-                    setFilterMenu(false)
-                }}>{(windowWidth < 1700) ? <MenuIcon/> : null} Filter</h2> : <h2 className='footer__content__filter'>Filter</h2>}
-                {filterMenu ? 
-                    <div className='footer__content__filter-items-container'>
-                        <span className='footer__content__filter-name design-filter' onClick={() => {
-                            setFilter('design')
-                        }}>Design</span>
-                        <span className='footer__content__filter-name dev-filter' onClick={() => {
-                            setFilter('dev')
-                        }}>Development</span>
-                        <span className='footer__content__filter-name marketing-filter' onClick={() => {
-                            setFilter('marketing')
-                        }}>Marketing</span>
-                        <span className='footer__content__filter-name verwaltung-filter' onClick={() => {
-                            setFilter('verwaltung')
-                        }}>Verwaltung</span>
-                    </div> : null}
-            </div>
+        <div className='footer__content jobs__content'>
             <div className='footer__joblist'>
-                <div className='footer__joblist-item design'>
+                <div className='footer__joblist-item'>
                     {(activeJob === 'designer') ? <DesignerDetails switchToApplication={switchToApplication}/> : <Designer/>}
                     <button onClick={() => {
                         if (activeJob === 'designer') {
@@ -81,7 +52,7 @@ export const Jobs = ({switchToApplication}) => {
                         <ArrowDropDownIcon sx={{ fontSize: 40}}/>
                     </button>
                 </div>
-                <div className='footer__joblist-item dev'>
+                <div className='footer__joblist-item'>
                     {(activeJob === 'frontenddev') ? <FrontEndDeveloperDetails switchToApplication={switchToApplication}/> : <FrontEndDeveloper/>}
                     
                     <button onClick={() => {
@@ -105,7 +76,7 @@ export const Bewerbung = () => {
 
 export const Agb = () => {
     return (
-        <div className='footer__content'>
+        <div className='footer__content agb__content'>
             <h1 className='footer__content__headline' id="geltungsbereich">Allgemeine Geschäftsbedingungen</h1>
             <h2 className='footer__content__chapter-headline'>Geltungsbereich</h2>
             <p className='footer__content__text'>Für alle Lieferungen von DemoShop e.K. (nachfolgend DemoShop) an Verbraucher gelten diese Allgemeinen Geschäftsbedingungen (AGB).<br/>
@@ -674,6 +645,28 @@ export const DatenschutzChapter = () => {
                     <span className='footer__list-item-name'>automatisierte Entscheidungsfindung</span>
                 </li>
             </a>
+        </ul>
+    )
+}
+
+export const JobsFilter = () => {
+    return (
+        <ul className='footer__list'>
+            <li className='footer__list-item'>
+                <span className='footer__list-item-name'>Alle</span>
+            </li>
+            <li className='footer__list-item'>
+                <span className='footer__list-item-name'>Design</span>
+            </li>
+            <li className='footer__list-item'>
+                <span className='footer__list-item-name'>Development</span>
+            </li>
+            <li className='footer__list-item'>
+                <span className='footer__list-item-name'>Marketing</span>
+            </li>
+            <li className='footer__list-item'>
+                <span className='footer__list-item-name'>Verwaltung</span>
+            </li>
         </ul>
     )
 }

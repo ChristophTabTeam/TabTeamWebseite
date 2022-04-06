@@ -14,7 +14,7 @@ function Contact() {
                     <h2><span className='green'>Dein Papierflieger</span> erreicht</h2>
                     <h1>uns schnell und <span className='green'>digital</span>.</h1>
                     <p>
-                        Analoge Analogien ins digitale Sinnbild vermitteln. Wir freuen uns sehr über deine Nachricht.
+                        Analogien ins digitale Sinnbild vermitteln. Wir freuen uns sehr über deine Nachricht.
                         Schick ihn los und vertrau uns.
                     </p>
                     <p>
@@ -32,6 +32,16 @@ function Contact() {
                                 <div className='contact__iphone-notch-sensor'/>
                                 <div className='contact__iphone-notch-speaker'/>
                                 <div className='contact__iphone-notch-camera'/>
+                            </div>
+                            <div className='contact__iphone-buttons'>
+                                <div className='contact__iphone-left-buttons'>
+                                    <div className='contact__iphone-mute-button'/>
+                                    <div className='contact__iphone-volume-button top'/>
+                                    <div className='contact__iphone-volume-button bottom'/>
+                                </div>
+                                <div className='contact__iphone-right-buttons'>
+                                    <div className='contact__iphone-on-button'/>    
+                                </div>
                             </div>
                             <label className='contact__form-input-label'>
                                 <input type="text" name="name" placeholder='Name'className='contact__form-item contact__input '/>
