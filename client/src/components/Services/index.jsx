@@ -113,8 +113,8 @@ function Services() {
                             <h2><span className="green"><span data-aos="fade-up" data-aos-delay="50" data-aos-once="true">Der</span><span data-aos="fade-up" data-aos-delay="300" data-aos-once="true"> Draht</span><span data-aos="fade-up" data-aos-delay="500" data-aos-once="true"> glüht</span> </span><span data-aos="fade-up" data-aos-delay="750" data-aos-once="true"> auf</span></h2>
                             <h1><span data-aos="fade-up" data-aos-delay="1000" data-aos-once="true">treibt </span><span className="green"><span data-aos="fade-up" data-aos-delay="1200" data-aos-once="true">die </span><span data-aos="fade-up" data-aos-delay="1400" data-aos-once="true">Energie </span><span data-aos="fade-up" data-aos-delay="1600" data-aos-once="true">an</span></span><span data-aos="fade-up" data-aos-delay="1800" data-aos-once="true">.</span></h1>
                             <p data-aos="fade-up" data-aos-delay="2000" data-aos-once="true">
-                                Ab jetzt trifft deine Idee auf unser Leistungsspektrum. <br/>Für deine Idee geben wir alles.
-                                Workflow ist uns wichtig. Regelmäßige Updates sind für dich ein Muss und eine <br/>"Live-View"
+                                Wir geben alles für deine Idee, dabei ist uns der Workflow wichtig. 
+                                Regelmäßige Updates sind für dich ein Muss und eine "Live-View"
                                 bekommst du jederzeit auf Wunsch.
                             </p>
                             <p data-aos="fade-up" data-aos-delay="2200" data-aos-once="true">
@@ -142,8 +142,8 @@ export default Services
 const BrandingContent = () => {
     return (
         <div className='services__textcontentcontainer'>
-            <p>Wir erarbeiten dein Branding. Zusammen Konzeptionieren wir dir ein individuelles Logo. Daraus erfolgt dein Farbschema und wir verfassen deine Corporate Identity.</p>
-            <p>Es folgen deine Printmedien von Visitenkarte bis hin zum persönlichen Flyer. Wir erstellen dir Printmedien und digitale Medien mit denen du werben kannst. </p>
+            <p>Wir erschaffen zusammen dein individuelles Brand, deine Corporate Identity und setzen ein Augenmerk auf dein Logo.</p>
+            <p>Für deine starke Werbeperfomance geben wir dir persönliche, digitale und Printmedien an die Hand. Als Beispiel Flyer und Visitenkarten.</p>
             <p>Deine Marke wird individuell und einzigartig. Deine Motivation zündet zu einer Marketing Flamme die mit uns nicht ausgeht.</p>
         </div>
     )
@@ -152,9 +152,9 @@ const BrandingContent = () => {
 const WebdesignContent = () => {
     return (
         <div className='services__textcontentcontainer'>
-            <p>Deine Website in unserem Tab Stil. Nach deinen Vorstellungen und mit deinen Inhalten, erstellen wir dir eine personalisierte Website.</p>
-            <p>Mit unserer Website für dich, bist du im Trend, ein erfolgreicher Suchtreffer und deine Userexpiernce wird eine Wohltat für den Kunden.</p>
-            <p>Deine Website wird einladend, begeistern und resonancen erzielen. Ab jetzt öffnet jeder gerne deinen Tab.</p>
+            <p>Dank deinen Vorstellungen personalisieren wir deine Webseite zu einem stilvollen Tab. Sei mit deiner zugeschnittenen Webseite immer ein Volltreffer in den Trends.</p>
+            <p>Wir heben deine Userexpierence auf eine neue Ebene. Deine Webseite wirkt einladender für Kundenaktionen. </p>
+            <p>Die Kundenresonanz wird dich überwältigen, ab jetzt öffnet jeder deinen Tab.</p>
         </div>
     )
 }
@@ -162,9 +162,9 @@ const WebdesignContent = () => {
 const SocialMediaContent = () => {
     return (
         <div className='services__textcontentcontainer'>
-            <p>TabTeam wird für dich zum TagTeam. Wir sehen ab jetzt deine Tags und deinen Kanal, wie unseren als Alleinstellungsmerkmal.</p>
-            <p>Wir passen deine Tags und deinen Algorithmus auf deine Zielgruppe an.</p>
-            <p>Dein Unternehmen wird zum Influencer. Ihr werdet medial aktiv sein und klare Konzepte bekommen. Die junge Zielgruppe wird zu eurer Community.</p>
+            <p>TabTeam wird für dich zum TagTeam. Durch personalisierte Tags setzten wir deinen Kanal ins Rampenlicht.</p>
+            <p>Anpassungen führen zu einer genaueren Zielgruppe. Social Media Konzepte machen dein Unternehmen zum Influencer.</p>
+            <p>Zielgruppenanalyse führt zu einer klar definierten Community. </p>
         </div>
     )
 }

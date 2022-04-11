@@ -7,27 +7,6 @@
     background: $background-color;
 }
 
-.team__show-overview {
-    position: absolute;
-    right: 0;
-    width: 10em;
-    height: 100%;
-    display: flex;
-    gap: 0.5em;
-    justify-content: flex-end;
-    align-items: center;
-    z-index: 2;
-    padding: 0 1em 0 0;
-    text-align: center;
-    font-size: 0.7em;
-    color: $white-font-color;
-    transition-duration: $animation-speed;
-    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0));
-    &:hover {
-        background: linear-gradient(to right, rgba(0,0,0,0), rgba(247, 247, 247, .2));
-    }
-}
-
 .TeamGeneral {
     background: $background-color;
     height: 100%;
@@ -36,25 +15,14 @@
     grid-auto-rows: 50%;
     position: absolute;
     left: 0;
-    font-size: 1.7em;
     transition-duration: 0.5s;
 }
 
-.TeamGeneral.moved {
-    transform: translateX(-100vw);
-}
-
 .team__first {
-    font-size: 1em;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.team__text-container {
-    max-width: 730px;
-    text-align: left;
 }
 
 .team__second {
@@ -115,72 +83,9 @@
 }
 
 .team__employee-job-title {
-    font-size: 0.9em;
+    font-size: 1.1em;
     color: $accent-color;
     margin: 0;
-}
-
-.TeamOverview {
-    height: 100%;
-    width: 100vw;
-    position: absolute;
-    left: +100vw;
-    transition-duration: 0.5s;
-    background: url(../imgs/Background-Website.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-size: 1.7em;
-    text-align: center;
-}
-
-.TeamOverview.moved {
-    transform: translateX(-100vw);
-}
-
-.team__hide-overview {
-    position: absolute;
-    left: 0;
-    width: 10em;
-    height: 100%;
-    display: flex;
-    gap: 0.5em;
-    justify-content: flex-start;
-    align-items: center;
-    z-index: 2;
-    padding: 0 0 0 1em;
-    text-align: center;
-    font-size: 0.7em;
-    color: $white-font-color;
-    transition-duration: $animation-speed;
-    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0));
-    &:hover {
-        background: linear-gradient(to left, rgba(0,0,0,0), rgba(247, 247, 247, .2));
-    }
-}
-
-.team__overview__first {
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $background-color;
-}
-
-.team__overview__second {
-    height: 70%;
-    width: 100%;
-    display: grid;
-    margin: 0 auto;
-    max-width: 1000px;
-    text-align: left;
-    
-    padding: 1em;
-}
-
-.team__overview__second-team-group {
-    width: 100%;
-    color: $white-font-color;
 }
 
 .teamleiter {
@@ -277,16 +182,12 @@
     .TeamGeneral {
         font-size: 0.65em;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         height: 100%;
     }
 
     .team__first {
         align-items: baseline;
-    }
-
-    .team__text-container {
-        padding: 0 2em;
     }
 
     .team__second-background {
@@ -327,7 +228,7 @@
         width: 100%;
         display: flex;
         height: 3px;
-        top: 50%;
+        top: 55%;
         margin: 0 auto;
         justify-content: space-evenly;
         align-items: center;
@@ -381,10 +282,39 @@
 
     .team__employee-caption {
         max-width: 80%;
+        margin: 0 auto;
     }
 
     .team__employee-name {
         font-size: 1.2em;
+    }
+
+    .team__choose-team {
+        bottom: auto;
+        top: -50px;
+        gap: 0;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .team__choose-team-group {
+        gap: 0;
+        justify-content: center;
+    }
+
+    .team__choose-team-group.left {
+        justify-content: center;
+        gap: 0;
+    }
+
+    .team__choose-team-group.right {
+        gap: 0;
+    }
+
+    .team__choose-team-name {
+        width: max-content;
+        text-align: center;
     }
 }
 
@@ -392,7 +322,7 @@
     .TeamGeneral {
         font-size: 0.65em;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         height: 100%;
     }
     
@@ -406,6 +336,8 @@
 
     .team__first {
         align-items: baseline;
+        display: flex;
+        align-items: center;
     }
 
     .team__text-container {
@@ -429,17 +361,17 @@
         transition-duration: $animation-speed;
     }
 
-    .team__employee-container.christoph {
+    .team__employee-container.first {
         transform: translateX(0);
         transition-duration: $animation-speed;
     }
 
-    .team__employee-container.alex {
+    .team__employee-container.second {
         transform: translateX(-100%);
         transition-duration: $animation-speed;
     }
 
-    .team__employee-container.sascha {
+    .team__employee-container.third {
         transform: translateX(-200%);
         transition-duration: $animation-speed;
     }
@@ -449,7 +381,7 @@
         width: 100%;
         display: flex;
         height: 3px;
-        top: 50%;
+        top: 55%;
         margin: 0 auto;
         justify-content: space-evenly;
         align-items: center;
@@ -500,17 +432,45 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        gap: .9em;
-        padding: 1em 0 0.9em 0;
+        justify-content: center;
+        gap: .5em;
     }
 
     .team__employee-caption {
         max-width: 80%;
+        margin: 0 auto;
     }
 
     .team__employee-name {
         font-size: 1.2em;
+    }
+
+    .team__choose-team {
+        bottom: auto;
+        top: -50px;
+        gap: 0;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .team__choose-team-group {
+        gap: 0;
+        justify-content: center;
+    }
+
+    .team__choose-team-group.left {
+        justify-content: center;
+        gap: 0;
+    }
+
+    .team__choose-team-group.right {
+        gap: 0;
+    }
+
+    .team__choose-team-name {
+        width: max-content;
+        text-align: center;
     }
 }
 
@@ -520,9 +480,9 @@
     }
 }
 
-@media only screen and (min-width: 390px) {
+@media only screen and (min-width: 425px) {
     .TeamGeneral {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 }
 
@@ -602,6 +562,42 @@
     .team__text-container {
         max-width: 730px;
         text-align: left;
+    }
+
+    .team__choose-team {
+        width: 100%;
+        max-width: 1200px;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        gap: 2em;
+        height: max-content;
+        text-align: center;
+        position: absolute;
+        bottom: 11%;
+        font-size: 1em;
+        z-index: 1;
+        top: auto;
+    }
+    
+    .team__choose-team-group {
+        display: flex;
+        gap: 8.5em;
+    }
+    
+    .team__choose-team-group.left {
+        justify-content: flex-start;
+        gap: 9.5em;
+    }
+    
+    .team__choose-team-group.right {
+        justify-content: flex-end;
+        padding: 0 1em 0 0;
+        gap: 9.5em;
+    }
+
+    .team__choose-team-name {
+        width: auto;
     }
     
     .team__second {

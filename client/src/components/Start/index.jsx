@@ -4,6 +4,7 @@ import '../../styles/Start.scss'
 
 function Start() {
     const [socials, setSocials] = useState()
+    const width = window.innerWidth
 
     useEffect(() => {
         Aos.init({ duration: 1000 });
@@ -25,7 +26,6 @@ function Start() {
                                 setSocials()
                             }}
                         >
-
                         </li>
                     </a>
                     <a href='https://instagram.com/tabteam'>
@@ -37,7 +37,6 @@ function Start() {
                                 setSocials()
                             }}
                         >
-
                         </li>
                     </a>                    
                     <a href='https://linkedin.com/tabteam'>
@@ -49,7 +48,6 @@ function Start() {
                                 setSocials()
                             }}
                         >
-
                         </li>
                     </a>    
                     <a href='https://discord.gg/fjEr2bG337'>
@@ -61,23 +59,22 @@ function Start() {
                                 setSocials()
                             }}
                         >
-
                         </li>
                     </a>  
                 </ul>
             </div>
             <div className='start__grid'>
                 <div className='start__first'>
-                    <div className="start__monitor"></div>
+                    {(width < 1440) ? '' : <div className="start__monitor"/>}
                 </div>
                 <div className='start__second'>
                     <div className='textContainer'>  
                         <h2><span className='green'><span data-aos="fade-up" data-aos-delay="100" data-aos-once="true">Deine </span><span data-aos="fade-up" data-aos-delay="300" data-aos-once="true">Ideen</span></span><span data-aos="fade-up" data-aos-delay="500" data-aos-once="true"> setzen</span></h2>
                         <h1><span data-aos="fade-up" data-aos-delay="700" data-aos-once="true">wir </span><span data-aos="fade-up" data-aos-delay="900" data-aos-once="true">uns </span><span className='green'><span data-aos="fade-up" data-aos-delay="1100" data-aos-once="true">als </span><span data-aos="fade-up" data-aos-delay="1300" data-aos-once="true">Maßstab</span></span></h1>
-                        <p data-aos="fade-up" data-aos-delay="1500" data-aos-once="true">Mehr als nur Statistik und Preiskalkulation. Deine Motivation
-                        nehmen wir auf. Niveau und Wünsche werden auf
+                        <p>Deine Website soll nicht nur Statistik und Preiskalkulation sein.
+                        Wir nehmen deine Motivation auf. Niveau und Wünsche werden auf
                         deine Kunden abgestimmt. Sei ein direktes Suchergebnis.</p>
-                        <p data-aos="fade-up" data-aos-delay="1700" data-aos-once="true">TabTeam deine <span className='green'>WEBAGENTUR</span> mit <span className='green'>IDEALISMUS</span>.</p>
+                        <p>TabTeam deine <span className='green'>WEBAGENTUR</span> mit <span className='green'>IDEALISMUS</span>.</p>
                     </div>
                 </div>
             </div>

@@ -11,14 +11,18 @@
 
 .start__grid {
     display: grid;
-    grid-auto-rows: 50%;
     height: 100%;
+}
+
+.start__first {
+    grid-area: one;
 }
 
 .start__second {
     display: flex;
     justify-content: center;
     align-items: baseline;
+    grid-area: two;
 }
 
 .logo-container {
@@ -178,7 +182,7 @@
     }
 
     .start__socials-icon {
-        height: 35px;
+        height: 18px;
     }
 }
 
@@ -207,7 +211,7 @@
     }
 
     .start__socials-icon {
-        height: 35px;
+        height: 20px;
     }
 }
 
@@ -304,6 +308,18 @@
     }
 }
 
-@media only screen and (min-width: 2000px) {
-    
+@media only screen and (min-width: 2500px) {
+    .logo-container {
+        top: 80px;
+        height: 80px;
+    }
+
+    .start__socials-wrapper {
+        gap: 3em;
+        padding: 1.5em 1em;
+    }
+
+    .start__socials-icon {
+        height: 55px;
+    }
 }

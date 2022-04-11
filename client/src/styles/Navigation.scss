@@ -368,10 +368,39 @@
   .nav__wrapper {
     padding: 3em 0 3em 3em;
   }
-
-  
 }
 
 @media only screen and (min-width: 1440px) {
   
+}
+
+@media (min-width: 2500px) {
+  .nav__container {
+    gap: 5em;
+    padding: 3em 2em;
+  }
+
+  .tabteam-icon {
+    height: 55px;
+  }
+
+  .tabteam-outlineicon {
+    height: 55px;
+  }
+
+  .nav__icon {
+    height: 55px;
+  }
+
+  .nav__icon-stroke {
+    height: 55px;
+  }
+
+  .nav__section-name {
+    left: 65px;
+  }
+
+  .nav__section-name.active {
+    left: 65px;
+  }
 }

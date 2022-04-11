@@ -1,7 +1,7 @@
 @import './variables';
 
 .Contact {
-    height: 100vh;
+    height: 130vh;
     width: 100%;
     background: $background-color;
     font-size: 1.7em;
@@ -61,7 +61,7 @@
 
 .contact__iphone {
     height: 79%;
-    border: 20px solid #333333;
+    border: 1.1em solid #333333;
     aspect-ratio: 9/19.5;
     border-radius: 2.5em;
     background-size: contain;
@@ -194,13 +194,13 @@ input:focus, textarea:focus {
 .contact__submit-button {
     position: absolute;
     box-sizing: border-box;
-    padding: 1.5em;
+    padding: .7em;
     border: none;
     background: $gradient;
     color: $white-font-color;
-    border-radius: 1.5em 0.5em;
+    border-radius: 1em 0.5em;
     width: 26%;
-    bottom: -60px;
+    bottom: -2em;
     box-shadow: $box-shadow;
 }
 
@@ -267,12 +267,17 @@ input:focus, textarea:focus {
     .Contact {
         font-size: 0.65em;
         display: grid;
-        grid-auto-flow: row;
-        grid-auto-rows: 50%;
+        grid-template-areas: 
+        'one'
+        'two'
+        'two'
+        ;
+        grid-auto-rows: 1fr;
     }
 
     .contact__first {
         height: 100%;
+        grid-area: one;
     }
 
     .contact__first-background {
@@ -300,6 +305,7 @@ input:focus, textarea:focus {
         align-items: center;
         padding: 0;
         position: relative;
+        grid-area: two;
     }
 
     .contact__iphone {
@@ -311,12 +317,17 @@ input:focus, textarea:focus {
     .Contact {
         font-size: 0.65em;
         display: grid;
-        grid-auto-flow: row;
-        grid-auto-rows: 50%;
+        grid-template-areas: 
+        'one'
+        'two'
+        'two'
+        ;
+        grid-auto-rows: 1fr;
     }
 
     .contact__first {
         height: 100%;
+        grid-area: one;
     }
 
     .contact__first-background {
@@ -344,6 +355,7 @@ input:focus, textarea:focus {
         align-items: center;
         padding: 0;
         position: relative;
+        grid-area: two;
     }
 }
 
@@ -365,6 +377,14 @@ input:focus, textarea:focus {
     }
 }
 
+@media (min-width: 768px) {
+    .contact__submit-button {
+        bottom: -3em;
+        padding: 1.5em;
+        border-radius: 1.5em 0.5em;
+    }
+}
+
 @media (min-width: 1024px) {
     .Contact {
         font-size: 1.5em;
@@ -377,9 +397,9 @@ input:focus, textarea:focus {
         width: 100%;
         background: $background-color;
         display: grid;
-        grid-auto-columns: 50%;
+        grid-auto-columns: 1fr;
         grid-auto-rows: unset;
-        grid-auto-flow: column;
+        grid-template-areas: 'one two';
     }
     
     .contact__first {

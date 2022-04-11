@@ -15,11 +15,11 @@ function Navigation() {
         if (window.innerWidth < 768) {
             if (window.scrollY <= height - 100) {
                 setActiveSection('start')
-            } else if (window.scrollY <= (height * 3 - 100)) {
+            } else if (window.scrollY <= (height * 2.5 - 100)) {
                 setActiveSection('services')
-            } else if (window.scrollY <= (height * 4 - 100)) {
+            } else if (window.scrollY <= (height * 3.5 - 100)) {
                 setActiveSection('team')
-            } else if (window.scrollY <= (height * 5 - 100)) {
+            } else if (window.scrollY <= (height * 4.5 - 100)) {
                 setActiveSection('contact')
             } else {
                 setActiveSection()
@@ -35,8 +35,7 @@ function Navigation() {
                 setActiveSection('contact')
             } else if (window.scrollY <= (height * 5 - 200)) {
                 setActiveSection('footer')
-            }
-            else {
+            } else {
                 setActiveSection()
             }
         }

@@ -4,8 +4,10 @@ import { GeneralEmployees, DesignEmployees, DevelopmetEmployees, MarketingEmploy
 
 function Team() {
     const [indicator, setIndicator] = useState('first')
-    const width = window.innerWidth
     const [activeTeam, setActiveTeam] = useState('general')
+    const [amount, setAmount] = useState('three')
+    const width = window.innerWidth
+
     
     function ActiveTeam(props) {
         if (activeTeam === 'general') {
@@ -37,6 +39,45 @@ function Team() {
         }
     }
 
+    function TwoIndicators() {
+        return (
+            <>
+                <div className={(indicator === 'first') ? 'team__mobile__indicator active' : 'team__mobile__indicator'}
+                    onClick={() => {
+                        setIndicator('first')
+                    }}
+                />
+                <div className={(indicator === 'second') ? 'team__mobile__indicator active' : 'team__mobile__indicator'}
+                    onClick={() => {
+                        setIndicator('second')
+                    }}
+                />
+            </>
+        )
+    }
+
+    function ThreeIndicators() {
+        return (
+            <>
+                <div className={(indicator === 'first') ? 'team__mobile__indicator active' : 'team__mobile__indicator'}
+                    onClick={() => {
+                        setIndicator('first')
+                    }}
+                />
+                <div className={(indicator === 'second') ? 'team__mobile__indicator active' : 'team__mobile__indicator'}
+                    onClick={() => {
+                        setIndicator('second')
+                    }}
+                />
+                <div className={(indicator === 'third') ? 'team__mobile__indicator active' : 'team__mobile__indicator'}
+                    onClick={() => {
+                        setIndicator('third')
+                    }}
+                />
+            </>
+        )
+    }
+
     return (
         <div className='Team' id='team'>
             <div className='TeamGeneral'>
@@ -45,9 +86,7 @@ function Team() {
                         <h2><span className="green"><span data-aos="fade-up" data-aos-delay="50" data-aos-once="true">Dein Tab</span></span><span data-aos="fade-up" data-aos-delay="300" data-aos-once="true"> erstellt</span></h2>
                         <h1>von unserem <span className='green'>Team</span>.</h1>
                         <p data-aos="fade-up" data-aos-delay="2000" data-aos-once="true">
-                            wir freuen uns sehr auf die Zusammenarbeit mit dir. <br/>
-                            Wir wollen, dass du dich zuhause fühlst, sei ein Teil von uns. 
-                            Zusammen mit dir wird es dein Projekt.
+                        Wir laden dich ins Haus TabTeam ein. Zusammen starten wir dein Projekt. Dürfen wir uns vorstellen.
                         </p>
                         <p>
                             TabTeam arbeitet <span className='green uppercase'>familiär</span> und <span className='green uppercase'>kooperativ</span>.
@@ -59,40 +98,49 @@ function Team() {
                         <div className='team__second-top-background'/>
                     </div>
                     <div className={(width < 1440) ? 'team__employee-mobile-indicator-container' : 'team__employee-mobile-indicator-container inactive'}>
-                            <div className={(indicator === 'christoph') ? 'team__mobile__indicator active' : 'team__mobile__indicator'}
-                                onClick={() => {
-                                    setIndicator('first')
-                                }}
-                            />
-                            <div className={(indicator === 'alex') ? 'team__mobile__indicator active' : 'team__mobile__indicator'}
-                                onClick={() => {
-                                    setIndicator('second')
-                                }}
-                            />
-                            <div className={(indicator === 'sascha') ? 'team__mobile__indicator active' : 'team__mobile__indicator'}
-                                onClick={() => {
-                                    setIndicator('thrid')
-                                }}
-                            />
+                        {(amount === 'two') ? <TwoIndicators/> : <ThreeIndicators/> }
                     </div>
                     {(width < 1440) ? <EmployeeRenderedContainer/> : <ActiveTeam class='team__employee-container'/>}
                     <div className='team__choose-team'>
-                        <div className='team__choose-team-group left'>
+                        {(width < 1440) ? <>
                             <div className={(activeTeam === 'general') ? 'team__choose-team-name active' : 'team__choose-team-name'} onClick={() => {
                                 setActiveTeam('general')
+                                setAmount('three')
                             }}>Gründer</div>
                             <div className={(activeTeam === 'marketing') ? 'team__choose-team-name active' : 'team__choose-team-name'} onClick={() => {
                                 setActiveTeam('marketing')
+                                setAmount('two')
+                            }}>Marketing</div>
+                            <div className={(activeTeam === 'development') ? 'team__choose-team-name active' : 'team__choose-team-name'} onClick={() => {
+                                setActiveTeam('development')
+                                setAmount('two')
+                            }}>Solutions</div>
+                            <div className={(activeTeam === 'design') ? 'team__choose-team-name active' : 'team__choose-team-name'} onClick={() => {
+                                setActiveTeam('design')
+                                setAmount('three')
+                            }}>Creative</div>
+                        </> : <>
+                        <div className='team__choose-team-group left'>
+                            <div className={(activeTeam === 'general') ? 'team__choose-team-name active' : 'team__choose-team-name'} onClick={() => {
+                                setActiveTeam('general')
+                                setAmount('three')
+                            }}>Gründer</div>
+                            <div className={(activeTeam === 'marketing') ? 'team__choose-team-name active' : 'team__choose-team-name'} onClick={() => {
+                                setActiveTeam('marketing')
+                                setAmount('two')
                             }}>Marketing</div>
                         </div>
                         <div className='team__choose-team-group right'>
                             <div className={(activeTeam === 'development') ? 'team__choose-team-name active' : 'team__choose-team-name'} onClick={() => {
                                 setActiveTeam('development')
+                                setAmount('two')
                             }}>Solutions</div>
                             <div className={(activeTeam === 'design') ? 'team__choose-team-name active' : 'team__choose-team-name'} onClick={() => {
                                 setActiveTeam('design')
+                                setAmount('three')
                             }}>Creative</div>
                         </div>
+                        </>}
                     </div>
                 </div>
             </div>
